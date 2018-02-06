@@ -2,7 +2,7 @@
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-public class Grid_character : MonoBehaviour {
+abstract public class Grid_character : MonoBehaviour {
 
     //var
     public float speed;
@@ -21,6 +21,7 @@ public class Grid_character : MonoBehaviour {
     public Text MouseText;
 
     // Use this for initialization
+    /*
     public void Start () {
 
         tilemap = (GameObject.Find("Tilemap")).GetComponent<Tilemap>();
@@ -31,46 +32,15 @@ public class Grid_character : MonoBehaviour {
 
         Debug.Log("Start.Grid_mov", gameObject);
 
-    }
+    } */
 	
-	// Update is called once per frame
+	/* Update is called once per frame
 	protected void Update () {
 
         updateCell();
 
-        //Bouge vers targetPos tant que target cible n'est pas atteint.
-        /*
-        if (transform.position == targetPos)
-            moving = false;
-        if (!moving)
-        {
-            targetPos = target.position;
-            moving = true;
-        }
-        moveToPos(targetPos);
-        */
 
-        /*
-        if (transform.position == tilemap.GetCellCenterWorld(targetCell) )
-            moving = false;
-        if (!moving)
-        {
-            targetCell = tilemap.WorldToCell(target.position);
-            moving = true;
-        }
-        moveToCell(targetCell);
-        */
-
-
-        /*
-        if (isWall(Cell))
-            MouseText.text = "HasTile true !";
-        else
-            MouseText.text = "HasTile false !";
-        */
-
-
-    }
+    } */
 
 
     //Renvoie les positions centrales (world) des cases adjacentes 
@@ -135,6 +105,7 @@ public class Grid_character : MonoBehaviour {
             case "Up":
                 return "Down";
             default:
+                Debug.Log("oppositeDirection : CAS DEFAULT !", gameObject);
                 return "Top";//PLACEHOLDER
         }
     }
@@ -169,5 +140,14 @@ public class Grid_character : MonoBehaviour {
         Vector3Int CellActuelle = tilemap.WorldToCell(transform.position);
         if (Cell != CellActuelle)
             Cell = CellActuelle;
+    }
+
+    public void setTargetPos(Vector3 pos)
+    {
+        targetPos = pos;
+    }
+    public string getDirection()
+    {
+        return direction;
     }
 }

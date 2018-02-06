@@ -10,8 +10,22 @@ public class Ghost_movements : Grid_character {
     protected Vector3Int PacmanPosCell;
     protected Transform PacTransform;
 
+    //Constantes 
+    public const float DUREE_CHASE = 5.0f;
+    public const float DUREE_SCATTER = 5.0f;
+    public const float DUREE_AFRAID = 7.0f;
+    public const float DUREE_MORT = 3.0f;
+    public const float REDUCTION_VITESSE = 4.0f;
     //La case autour de laquelle le fantome va tourner en mode Scatter.
     protected Vector3Int ScatterPos = new Vector3Int(-14, 13, 0);
+    
+    /* Les angles
+     * 
+     * BottomRight : (14, -16, 0) fPos (13, -14, 0) Cell
+     * BottomLeft : (-13, -15, 0) fPos (-14, -17, 0) Cell
+     * TopLeft : (-13, 14,0) fPos (-14, 12, 0) Cell
+     * TopRight : (14, 14, 0) fPos (13, 13, 0) Cell
+     */
 
     protected int state;
     /* Un Fantome a 3 Etat :
@@ -20,10 +34,19 @@ public class Ghost_movements : Grid_character {
      *      Cette angle est différent pour chaque fantome, il est définit dans <ScatterPos>
      * 3 : Frightened, le fantome est effrayé, il court dans tout les sens et peut se faire manger.
      */
+    protected int oldState; //Quand il est effrayé, on retient son état précédent.
 
     //protected Vector3Int Cell;
 
+    protected float timeLeft;
+    protected bool afraid;
 
+    protected SpriteRenderer ghost_SpriteR;
+    protected Sprite GhostNormal;
+    public Sprite GhostAfraid;
+
+
+    /*
     public void Start () {
 
         //init Cell, moving, targetPos et tilemap.
@@ -32,7 +55,6 @@ public class Ghost_movements : Grid_character {
         //On recupère les coordonnées de Pacman à tracer :
         PacTransform = (GameObject.Find("Pacman")).GetComponent<Transform>();
 
-
         updatePacPos();
 
         direction = "Left";
@@ -40,8 +62,7 @@ public class Ghost_movements : Grid_character {
 
         state = 1;
 
-
-        Debug.Log("Start.Ghost_mov", gameObject);
+        
 
     }
 	
@@ -62,19 +83,7 @@ public class Ghost_movements : Grid_character {
             "\nTargetPos = " + targetPos +
             "\nCell = " + Cell;
 
-    }
-
-    public void Init()
-    {
-        PacTransform = (GameObject.Find("Pacman")).GetComponent<Transform>();
-
-        updatePacPos();
-
-        direction = "Left";
-        targetPos = caseDevant();
-
-        state = 1;
-    }
+    } */
 
     //Renvoie la distance entre deux cellules.
     public float dist(Vector3 posA, Vector3 posB)
@@ -107,7 +116,6 @@ public class Ghost_movements : Grid_character {
                 targetPos = caseDevant();
 
             updateDirection(targetPos);
-
         }
     }
     /* 
@@ -192,6 +200,8 @@ public class Ghost_movements : Grid_character {
         //On choisit aléatoirement une case parmi celles disponible :
         //Random rnd = new Random();
         int i = Random.Range(0, listC.Count-1);
+        //Debug.Log(i, gameObject);
+        //Debug.Log(listC[i], gameObject);
 
         return listC[i];
     }
@@ -262,9 +272,25 @@ public class Ghost_movements : Grid_character {
             direction = "Down";
     }
 
+    public void death()
+    {
+        state = 0;
+        transform.position  = new Vector3(0, 0, 0);
+        targetPos = transform.position;
+        timeLeft = DUREE_MORT;
+    }
+
     public int getState()
     {
         return state;
+    }
+    public void setState(int newState)
+    {
+        state = newState;
+    }
+    public void setTimeLeft(float time)
+    {
+        timeLeft = time;
     }
 
 }

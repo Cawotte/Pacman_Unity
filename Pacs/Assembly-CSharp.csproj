@@ -51,14 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Blinky_movements.cs" />
      <Compile Include="Assets\Scripts\Buttons_Behaviour.cs" />
-     <Compile Include="Assets\Scripts\EatablePellets.cs" />
      <Compile Include="Assets\Scripts\Editeur\MappingEditor (1).cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Ghost_movements.cs" />
      <Compile Include="Assets\Scripts\Grid_character.cs" />
      <Compile Include="Assets\Scripts\MovePacman.cs" />
-     <Compile Include="Assets\Scripts\Nodes.cs" />
+     <Compile Include="Assets\Scripts\Pacman_collisions.cs" />
      <Compile Include="Assets\Scripts\Pacman_movements.cs" />
      <Compile Include="Assets\Scripts\TileMapTest.cs" />
  <Reference Include="UnityEngine.UI">

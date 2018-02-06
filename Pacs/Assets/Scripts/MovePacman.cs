@@ -12,7 +12,7 @@ public class MovePacman : MonoBehaviour {
     public Text posText;
     public static Vector3 posPacmanCell; 
 
-    GridLayout gridLayout;
+    //GridLayout gridLayout;
     Tilemap tilemap;
 
 
@@ -32,7 +32,7 @@ public class MovePacman : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
         tilemap = GameObject.Find("Tilemap").GetComponent<Tilemap>();
-        gridLayout = transform.parent.GetComponentInParent<GridLayout>();
+        //gridLayout = transform.parent.GetComponentInParent<GridLayout>();
 
         print(tilemap.cellLayout);
 

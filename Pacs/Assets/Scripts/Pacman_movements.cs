@@ -21,7 +21,10 @@ public class Pacman_movements : Grid_character {
     {
 
         //init Cell, moving, targetPost et tilemap.
-        base.Start();
+        tilemap = (GameObject.Find("Tilemap")).GetComponent<Tilemap>();
+        Cell = tilemap.WorldToCell(transform.position);
+        targetPos = transform.position;
+        moving = false;
 
         direction = "Right";
         newDirection = direction;
