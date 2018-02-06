@@ -1,0 +1,1361 @@
+fileFormatVersion: 2
+guid: f24031bf865d3cc4086633173fe7397b
+timeCreated: 1517693677
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Pac-Man_Plus_Comparable_Sprite_Sheet_0
+    21300002: Pac-Man_Plus_Comparable_Sprite_Sheet_1
+    21300004: Pac-Man_Plus_Comparable_Sprite_Sheet_2
+    21300006: Pac-Man_Plus_Comparable_Sprite_Sheet_3
+    21300008: Pac-Man_Plus_Comparable_Sprite_Sheet_4
+    21300010: Pac-Man_Plus_Comparable_Sprite_Sheet_5
+    21300012: Pac-Man_Plus_Comparable_Sprite_Sheet_6
+    21300014: Pac-Man_Plus_Comparable_Sprite_Sheet_7
+    21300016: Pac-Man_Plus_Comparable_Sprite_Sheet_8
+    21300018: Pac-Man_Plus_Comparable_Sprite_Sheet_9
+    21300020: Pac-Man_Plus_Comparable_Sprite_Sheet_10
+    21300022: Pac-Man_Plus_Comparable_Sprite_Sheet_11
+    21300024: Pac-Man_Plus_Comparable_Sprite_Sheet_12
+    21300026: Pac-Man_Plus_Comparable_Sprite_Sheet_13
+    21300028: Pac-Man_Plus_Comparable_Sprite_Sheet_14
+    21300030: Pac-Man_Plus_Comparable_Sprite_Sheet_15
+    21300032: Pac-Man_Plus_Comparable_Sprite_Sheet_16
+    21300034: Pac-Man_Plus_Comparable_Sprite_Sheet_17
+    21300036: Pac-Man_Plus_Comparable_Sprite_Sheet_18
+    21300038: Pac-Man_Plus_Comparable_Sprite_Sheet_19
+    21300040: Pac-Man_Plus_Comparable_Sprite_Sheet_20
+    21300042: Pac-Man_Plus_Comparable_Sprite_Sheet_21
+    21300044: Pac-Man_Plus_Comparable_Sprite_Sheet_22
+    21300046: Pac-Man_Plus_Comparable_Sprite_Sheet_23
+    21300048: Pac-Man_Plus_Comparable_Sprite_Sheet_24
+    21300050: Pac-Man_Plus_Comparable_Sprite_Sheet_25
+    21300052: Pac-Man_Plus_Comparable_Sprite_Sheet_26
+    21300054: Pac-Man_Plus_Comparable_Sprite_Sheet_27
+    21300056: Pac-Man_Plus_Comparable_Sprite_Sheet_28
+    21300058: Pac-Man_Plus_Comparable_Sprite_Sheet_29
+    21300060: Pac-Man_Plus_Comparable_Sprite_Sheet_30
+    21300062: Pac-Man_Plus_Comparable_Sprite_Sheet_31
+    21300064: Pac-Man_Plus_Comparable_Sprite_Sheet_32
+    21300066: Pac-Man_Plus_Comparable_Sprite_Sheet_33
+    21300068: Pac-Man_Plus_Comparable_Sprite_Sheet_34
+    21300070: Pac-Man_Plus_Comparable_Sprite_Sheet_35
+    21300072: Pac-Man_Plus_Comparable_Sprite_Sheet_36
+    21300074: Pac-Man_Plus_Comparable_Sprite_Sheet_37
+    21300076: Pac-Man_Plus_Comparable_Sprite_Sheet_38
+    21300078: Pac-Man_Plus_Comparable_Sprite_Sheet_39
+    21300080: Pac-Man_Plus_Comparable_Sprite_Sheet_40
+    21300082: Pac-Man_Plus_Comparable_Sprite_Sheet_41
+    21300084: Pac-Man_Plus_Comparable_Sprite_Sheet_42
+    21300086: Pac-Man_Plus_Comparable_Sprite_Sheet_43
+    21300088: Pac-Man_Plus_Comparable_Sprite_Sheet_44
+    21300090: Pac-Man_Plus_Comparable_Sprite_Sheet_45
+    21300092: Pac-Man_Plus_Comparable_Sprite_Sheet_46
+    21300094: Pac-Man_Plus_Comparable_Sprite_Sheet_47
+    21300096: Pac-Man_Plus_Comparable_Sprite_Sheet_48
+    21300098: Pac-Man_Plus_Comparable_Sprite_Sheet_49
+    21300100: Pac-Man_Plus_Comparable_Sprite_Sheet_50
+    21300102: Pac-Man_Plus_Comparable_Sprite_Sheet_51
+    21300104: Pac-Man_Plus_Comparable_Sprite_Sheet_52
+    21300106: Pac-Man_Plus_Comparable_Sprite_Sheet_53
+    21300108: Pac-Man_Plus_Comparable_Sprite_Sheet_54
+    21300110: Pac-Man_Plus_Comparable_Sprite_Sheet_55
+    21300112: Pac-Man_Plus_Comparable_Sprite_Sheet_56
+    21300114: Pac-Man_Plus_Comparable_Sprite_Sheet_57
+    21300116: Pac-Man_Plus_Comparable_Sprite_Sheet_58
+    21300118: Pac-Man_Plus_Comparable_Sprite_Sheet_59
+    21300120: Pac-Man_Plus_Comparable_Sprite_Sheet_60
+    21300122: Pac-Man_Plus_Comparable_Sprite_Sheet_61
+    21300124: Pac-Man_Plus_Comparable_Sprite_Sheet_62
+    21300126: Pac-Man_Plus_Comparable_Sprite_Sheet_63
+    21300128: Pac-Man_Plus_Comparable_Sprite_Sheet_64
+    21300130: Pac-Man_Plus_Comparable_Sprite_Sheet_65
+    21300132: Pac-Man_Plus_Comparable_Sprite_Sheet_66
+    21300134: Pac-Man_Plus_Comparable_Sprite_Sheet_67
+    21300136: Pac-Man_Plus_Comparable_Sprite_Sheet_68
+    21300138: Pac-Man_Plus_Comparable_Sprite_Sheet_69
+    21300140: Pac-Man_Plus_Comparable_Sprite_Sheet_70
+    21300142: Pac-Man_Plus_Comparable_Sprite_Sheet_71
+    21300144: Pac-Man_Plus_Comparable_Sprite_Sheet_72
+    21300146: Pac-Man_Plus_Comparable_Sprite_Sheet_73
+    21300148: Pac-Man_Plus_Comparable_Sprite_Sheet_74
+    21300150: Pac-Man_Plus_Comparable_Sprite_Sheet_75
+    21300152: Pac-Man_Plus_Comparable_Sprite_Sheet_76
+    21300154: Pac-Man_Plus_Comparable_Sprite_Sheet_77
+    21300156: Pac-Man_Plus_Comparable_Sprite_Sheet_78
+    21300158: Pac-Man_Plus_Comparable_Sprite_Sheet_79
+    21300160: Pac-Man_Plus_Comparable_Sprite_Sheet_80
+    21300162: Pac-Man_Plus_Comparable_Sprite_Sheet_81
+    21300164: Pac-Man_Plus_Comparable_Sprite_Sheet_82
+    21300166: Pac-Man_Plus_Comparable_Sprite_Sheet_83
+    21300168: Pac-Man_Plus_Comparable_Sprite_Sheet_84
+    21300170: Pac-Man_Plus_Comparable_Sprite_Sheet_85
+    21300172: Pac-Man_Plus_Comparable_Sprite_Sheet_86
+    21300174: Pac-Man_Plus_Comparable_Sprite_Sheet_87
+    21300176: Pac-Man_Plus_Comparable_Sprite_Sheet_88
+    21300178: Pac-Man_Plus_Comparable_Sprite_Sheet_89
+    21300180: Pac-Man_Plus_Comparable_Sprite_Sheet_90
+    21300182: Pac-Man_Plus_Comparable_Sprite_Sheet_91
+    21300184: Pac-Man_Plus_Comparable_Sprite_Sheet_92
+    21300186: Pac-Man_Plus_Comparable_Sprite_Sheet_93
+    21300188: Pac-Man_Plus_Comparable_Sprite_Sheet_94
+    21300190: Pac-Man_Plus_Comparable_Sprite_Sheet_95
+    21300192: Pac-Man_Plus_Comparable_Sprite_Sheet_96
+    21300194: Pac-Man_Plus_Comparable_Sprite_Sheet_97
+    21300196: Pac-Man_Plus_Comparable_Sprite_Sheet_98
+    21300198: Pac-Man_Plus_Comparable_Sprite_Sheet_99
+    21300200: Pac-Man_Plus_Comparable_Sprite_Sheet_100
+    21300202: Pac-Man_Plus_Comparable_Sprite_Sheet_101
+    21300204: Pac-Man_Plus_Comparable_Sprite_Sheet_102
+    21300206: Pac-Man_Plus_Comparable_Sprite_Sheet_103
+    21300208: Pac-Man_Plus_Comparable_Sprite_Sheet_104
+    21300210: Pac-Man_Plus_Comparable_Sprite_Sheet_105
+    21300212: Pac-Man_Plus_Comparable_Sprite_Sheet_106
+    21300214: Pac-Man_Plus_Comparable_Sprite_Sheet_107
+    21300216: Pac-Man_Plus_Comparable_Sprite_Sheet_108
+    21300218: Pac-Man_Plus_Comparable_Sprite_Sheet_109
+    21300220: Pac-Man_Plus_Comparable_Sprite_Sheet_110
+    21300222: Pac-Man_Plus_Comparable_Sprite_Sheet_111
+    21300224: Pac-Man_Plus_Comparable_Sprite_Sheet_112
+    21300226: Pac-Man_Plus_Comparable_Sprite_Sheet_113
+    21300228: Pac-Man_Plus_Comparable_Sprite_Sheet_114
+    21300230: Pac-Man_Plus_Comparable_Sprite_Sheet_115
+    21300232: Pac-Man_Plus_Comparable_Sprite_Sheet_116
+    21300234: Pac-Man_Plus_Comparable_Sprite_Sheet_117
+    21300236: Pac-Man_Plus_Comparable_Sprite_Sheet_118
+    21300238: Pac-Man_Plus_Comparable_Sprite_Sheet_119
+    21300240: Pac-Man_Plus_Comparable_Sprite_Sheet_120
+    21300242: Pac-Man_Plus_Comparable_Sprite_Sheet_121
+    21300244: Pac-Man_Plus_Comparable_Sprite_Sheet_122
+    21300246: Pac-Man_Plus_Comparable_Sprite_Sheet_123
+    21300248: Pac-Man_Plus_Comparable_Sprite_Sheet_124
+    21300250: Pac-Man_Plus_Comparable_Sprite_Sheet_125
+    21300252: Pac-Man_Plus_Comparable_Sprite_Sheet_126
+    21300254: Pac-Man_Plus_Comparable_Sprite_Sheet_127
+    21300256: Pac-Man_Plus_Comparable_Sprite_Sheet_128
+    21300258: Pac-Man_Plus_Comparable_Sprite_Sheet_129
+    21300260: Pac-Man_Plus_Comparable_Sprite_Sheet_130
+    21300262: Pac-Man_Plus_Comparable_Sprite_Sheet_131
+    21300264: Pac-Man_Plus_Comparable_Sprite_Sheet_132
+    21300266: Pac-Man_Plus_Comparable_Sprite_Sheet_133
+    21300268: Pac-Man_Plus_Comparable_Sprite_Sheet_134
+    21300270: Pac-Man_Plus_Comparable_Sprite_Sheet_135
+    21300272: Pac-Man_Plus_Comparable_Sprite_Sheet_136
+    21300274: Pac-Man_Plus_Comparable_Sprite_Sheet_137
+    21300276: Pac-Man_Plus_Comparable_Sprite_Sheet_138
+    21300278: Pac-Man_Plus_Comparable_Sprite_Sheet_139
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pac-Man_Plus_Comparable_Sprite_Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

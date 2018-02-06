@@ -1,0 +1,136 @@
+G:\Unity\Pacs\Temp\bin\Debug\Assembly-CSharp.dll
+G:\Unity\Pacs\Temp\bin\Debug\Assembly-CSharp.pdb
+G:\Unity\Pacs\Temp\bin\Debug\nunit.framework.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Advertisements.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Analytics.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.GoogleAudioSpatializer.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Graphs.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.HoloLens.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Networking.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Purchasing.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.SpatialTracking.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.TestRunner.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Timeline.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.TreeEditor.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.UI.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.UIAutomation.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.VR.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.WindowsStandalone.Extensions.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Advertisements.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Analytics.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.HoloLens.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Networking.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Purchasing.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.StandardEvents.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.TestRunner.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Timeline.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.UI.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.UIAutomation.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.Cecil.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.SerializationLogic.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.DataContract.dll
+G:\Unity\Pacs\Temp\bin\Debug\ExCSS.Unity.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.UNetWeaver.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.Cecil.Mdb.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.CecilTools.dll
+G:\Unity\Pacs\Temp\bin\Debug\Unity.Cecil.Pdb.dll
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.UI.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.UI.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Networking.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Networking.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.TestRunner.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.TestRunner.xml
+G:\Unity\Pacs\Temp\bin\Debug\nunit.framework.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.Timeline.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.Timeline.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.TreeEditor.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.UIAutomation.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.UIAutomation.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.GoogleAudioSpatializer.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.HoloLens.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.HoloLens.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.SpatialTracking.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.VR.xml
+G:\Unity\Pacs\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+G:\Unity\Pacs\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+G:\Unity\Pacs\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+G:\Unity\Pacs\obj\Debug\Assembly-CSharp.dll
+G:\Unity\Pacs\obj\Debug\Assembly-CSharp.pdb
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\obj\Debug\Assembly-CSharp.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\obj\Debug\Assembly-CSharp.pdb
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\nunit.framework.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Advertisements.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Analytics.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.GoogleAudioSpatializer.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Graphs.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.HoloLens.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Networking.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Purchasing.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.SpatialTracking.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.TestRunner.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Timeline.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.TreeEditor.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.UI.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.UIAutomation.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.VR.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.WindowsStandalone.Extensions.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Advertisements.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Analytics.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.HoloLens.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Purchasing.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.StandardEvents.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.TestRunner.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Timeline.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.UI.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.UIAutomation.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.Cecil.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.DataContract.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\ExCSS.Unity.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.Cecil.Mdb.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\Unity.Cecil.Pdb.dll
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.UI.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.UI.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Networking.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.TestRunner.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.TestRunner.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\nunit.framework.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.Timeline.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.Timeline.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.TreeEditor.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.UIAutomation.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.UIAutomation.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.GoogleAudioSpatializer.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.HoloLens.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.HoloLens.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.SpatialTracking.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.VR.xml
+D:\Users\Ensuque\Documents\1-TRUE DOCUMENTS\Polytech\Unity\Pacs\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml

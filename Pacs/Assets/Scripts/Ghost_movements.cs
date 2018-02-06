@@ -1,0 +1,270 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+
+public class Ghost_movements : Grid_character {
+
+    protected Vector3 PacmanPos;
+    protected Vector3Int PacmanPosCell;
+    protected Transform PacTransform;
+
+    //La case autour de laquelle le fantome va tourner en mode Scatter.
+    protected Vector3Int ScatterPos = new Vector3Int(-14, 13, 0);
+
+    protected int state;
+    /* Un Fantome a 3 Etat :
+     * 1 : Chase, il utilise son algorithme de poursuite de Pacman
+     * 2 : Scatter, il se diriger vers un des bloc aux angles de la map et tourne autour. 
+     *      Cette angle est différent pour chaque fantome, il est définit dans <ScatterPos>
+     * 3 : Frightened, le fantome est effrayé, il court dans tout les sens et peut se faire manger.
+     */
+
+    //protected Vector3Int Cell;
+
+
+    public void Start () {
+
+        //init Cell, moving, targetPos et tilemap.
+        base.Start();
+
+        //On recupère les coordonnées de Pacman à tracer :
+        PacTransform = (GameObject.Find("Pacman")).GetComponent<Transform>();
+
+
+        updatePacPos();
+
+        direction = "Left";
+        targetPos = caseDevant();
+
+        state = 1;
+
+
+        Debug.Log("Start.Ghost_mov", gameObject);
+
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
+        updateCell();
+        updatePacPos();
+
+        if (estDansSpawn())
+            sortirSpawn();
+        else
+            poursuivre(PacmanPos);
+
+        MouseText.text =
+            //"Pacman's Position:x=" + transform.position.x + ",y=" + transform.position.y +
+            "\nGhost's direction = " + direction +
+            "\nTargetPos = " + targetPos +
+            "\nCell = " + Cell;
+
+    }
+
+    public void Init()
+    {
+        PacTransform = (GameObject.Find("Pacman")).GetComponent<Transform>();
+
+        updatePacPos();
+
+        direction = "Left";
+        targetPos = caseDevant();
+
+        state = 1;
+    }
+
+    //Renvoie la distance entre deux cellules.
+    public float dist(Vector3 posA, Vector3 posB)
+    {
+        return Mathf.Sqrt(Mathf.Pow(posB.x - posA.x, 2) + Mathf.Pow(posB.y - posA.y, 2));
+    }
+    //Renvoie les coordonnées de la position (posA ou posB) la plus proche de targetPos.
+    public Vector3 plusProche(Vector3 posA, Vector3 posB, Vector3 targetPos)
+    {
+        if ( dist(posA, targetPos) <= dist(posB, targetPos))
+            return posA;
+        return posB;
+    }
+
+    public void poursuivre(Vector3 targetPosition)
+    {
+        if (transform.position != targetPos)
+            moveToCell(targetPos);
+        //Si il est sur sa cible, il change de cible.
+        else
+        {
+            if (estCroisement(Cell))
+            {
+                //Debug.Log("C'est un croisement", gameObject);
+                targetPos = caseAdjLaPlusProche(targetPosition);
+
+            }
+            //Si il n'est pas à un croisement, il ne peut qu'avancer, donc il avance.
+            else
+                targetPos = caseDevant();
+
+            updateDirection(targetPos);
+
+        }
+    }
+    /* 
+     * Renvoie la position de la cellule adjacente à la cellule actuelle la plus proche de la cellule cible.
+     * On l'utilise dès qu'on arrive à un croisement.
+     */
+    public Vector3 caseAdjLaPlusProche(Vector3 targetPos)
+    {
+        List<Vector3> listC = new List<Vector3>();
+
+        //On ajoute chaque cellule adjacente qui n'est pas un mur ou dans la direction opposé au fantomes à la liste des choix possibles.
+        //(Un fantome ne fait pas de demi-tours)
+        if ( !isWall(downCell()) && direction != "Up" && downCell() != new Vector3(0, 2, 0) && downCell() != new Vector3(1, 2, 0))
+            listC.Add( downCell() );
+        if ( !isWall(rightCell()) && direction != "Left")
+            listC.Add( rightCell() );
+        if ( !isWall(topCell()) && direction != "Down")
+            listC.Add(topCell());
+        if ( !isWall(leftCell()) && direction != "Right")
+            listC.Add(leftCell());
+
+        //Ensuite on renvoie la cellule qui est la plus proche de la cible.
+        /* Comme on appelle cette fonction uniquement à un croisement, il y a obligatoirement 1, 2 ou 3 valeurs
+         */
+        if (listC.Count == 1) //Cas virage.
+            return listC[0];
+        else if (listC.Count == 2)
+            return plusProche(listC[0], listC[1], targetPos);
+        else
+            return plusProche(listC[0], plusProche(listC[1], listC[2], targetPos), targetPos);
+
+        /* Précision : En cas d'égalité, il y a une priorité Up > Left > Down, qui
+         * est ici géré par l'ordre dans lequel on a ajouté les case + l'implémentation de plusProche.
+         */
+
+    }
+
+    //Renvoie la case en face de la case actuelle, en utilisant la direction du fantome.
+    public Vector3 caseDevant()
+    {
+        switch(direction)
+        {
+            case "Right":
+                return rightCell();
+            case "Left":
+                return leftCell();
+            case "Down":
+                return downCell();
+            case "Up":
+                return topCell();
+            default:
+                Debug.LogWarning("Cas impossible !");
+                return topCell(); //Placeholder, cas impossible normalement, à changer par la case d'angle du fantome.
+        }
+    }
+
+    //Le ghost fait immédiatement demi-tour, est uniquement utilisé lors du changement d'état entre Chase et Scatter
+    //
+    public void faireDemiTour()
+    {
+        //Inverse la direction, et change immédiatement sa case cible par celle derrière lui.
+        direction = oppositeDirection(direction);
+        targetPos = caseAdj(direction);
+    }
+
+    //Utilisé lorsque le fantome est en mode "Frightened", à chaque croisement il choisit une direction aléatoire.
+    public Vector3 caseAdjAleatoire()
+    {
+        List<Vector3> listC = new List<Vector3>();
+
+        //On ajoute chaque cellule adjacente qui n'est pas un mur ou dans la direction opposé au fantomes à la liste des choix possibles.
+        //(Un fantome ne fait pas de demi-tours)
+        if (!isWall(downCell()) && direction != "Up" && downCell() != new Vector3(0, 2, 0) && downCell() != new Vector3(1, 2, 0) )
+            listC.Add(downCell());
+        if (!isWall(rightCell()) && direction != "Left")
+            listC.Add(rightCell());
+        if (!isWall(topCell()) && direction != "Down")
+            listC.Add(topCell());
+        if (!isWall(leftCell()) && direction != "Right")
+            listC.Add(leftCell());
+
+        //On choisit aléatoirement une case parmi celles disponible :
+        //Random rnd = new Random();
+        int i = Random.Range(0, listC.Count-1);
+
+        return listC[i];
+    }
+
+    public bool estDansSpawn()
+    {
+        //Position des angles du spawn
+        /*
+        Vector3Int TopLeft = new Vector3Int(-4, 1, 0);
+        Vector3Int TopRight = new Vector3Int(3, 1, 0);
+        Vector3Int BottomRight = new Vector3Int(3, -3, 0);
+        Vector3Int BottomLeft = new Vector3Int(-4, -3, 0);
+        */
+
+        return (Cell.x <= 3 && Cell.x >= -4 && Cell.y <= 1 && Cell.y >= -3);
+
+        //Coordonnées case en face sorties
+        //Left = (-1,2,0)
+        //Right = (0,2,0)
+
+    }
+
+    public void sortirSpawn()
+    {
+        //Il y a deux cases vers lesquels se diriger pour sortir du spawn, le fantome se dirige vers
+        //la plus proche d'entre elle
+        poursuivre(plusProche(new Vector3(-1, 2, 0), new Vector3(0, 2, 0), Cell));
+    }
+
+    //Renvoie vrai si la case en argument est un croisement (a 3 cases vide adjacentes ou plus)
+    public bool estCroisement(Vector3Int cell)
+    {
+        int nb_caseAdj = 0;
+
+        if ( !isWall(rightCell()) )
+            nb_caseAdj++;
+        if ( !isWall(leftCell()) )
+            nb_caseAdj++;
+        if ( !isWall(downCell()) && downCell() != new Vector3(0, 2, 0) && downCell() != new Vector3(1, 2, 0) )
+            nb_caseAdj++;
+        if ( !isWall(topCell()) )
+            nb_caseAdj++;
+
+        if (nb_caseAdj >= 2)
+            return true;
+        return false;
+    }
+
+    public void updatePacPos()
+    {
+        PacmanPosCell = tilemap.WorldToCell(PacTransform.position);
+        PacmanPos = tilemap.GetCellCenterWorld(PacmanPosCell);
+    }
+
+    //Change la variable "direction" du fantome en fonction de sa case actuelle et de la case cible.
+    public void updateDirection(Vector3 targetPos)
+    {
+        Vector3 cellCentre = tilemap.GetCellCenterWorld(Cell);
+        if (cellCentre == targetPos)
+            return;
+        if (cellCentre.x < targetPos.x)
+            direction = "Right";
+        else if (cellCentre.x > targetPos.x)
+            direction = "Left";
+        else if (cellCentre.y < targetPos.y)
+            direction = "Up";
+        else if (cellCentre.y > targetPos.y)
+            direction = "Down";
+    }
+
+    public int getState()
+    {
+        return state;
+    }
+
+}
