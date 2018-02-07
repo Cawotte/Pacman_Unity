@@ -19,7 +19,7 @@ public class Pacman_collisions : MonoBehaviour {
 
         if (coll.gameObject.tag == "SuperPellet")
         {
-            Debug.Log("SuperPellet mangée !", gameObject);
+            //Debug.Log("SuperPellet mangée !", gameObject);
             GameManager.Score++; //A changer
             GameManager.numPellet--;
             Destroy(coll.gameObject);

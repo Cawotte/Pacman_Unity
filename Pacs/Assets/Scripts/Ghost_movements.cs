@@ -11,13 +11,14 @@ public class Ghost_movements : Grid_character {
     protected Transform PacTransform;
 
     //Constantes 
-    public const float DUREE_CHASE = 5.0f;
-    public const float DUREE_SCATTER = 5.0f;
+    public const float DUREE_CHASE = 20.0f;
+    public const float DUREE_SCATTER = 7.0f;
     public const float DUREE_AFRAID = 7.0f;
     public const float DUREE_MORT = 3.0f;
     public const float REDUCTION_VITESSE = 4.0f;
     //La case autour de laquelle le fantome va tourner en mode Scatter.
-    protected Vector3Int ScatterPos = new Vector3Int(-14, 13, 0);
+    public Vector3Int ScatterPos = new Vector3Int(13, 13, 0);
+    protected Vector3 PositionDepart;
     
     /* Les angles
      * 
@@ -275,7 +276,7 @@ public class Ghost_movements : Grid_character {
     public void death()
     {
         state = 0;
-        transform.position  = new Vector3(0, 0, 0);
+        transform.position  = PositionDepart;
         targetPos = transform.position;
         timeLeft = DUREE_MORT;
     }
