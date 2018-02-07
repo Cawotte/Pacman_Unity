@@ -72,6 +72,7 @@ public class Inky_movements : Ghost_movements
             MouseText.text = "Mode Chase !";
             timeLeft -= Time.deltaTime;
 
+
             if (estDansSpawn())
                 sortirSpawn();
             else
@@ -90,6 +91,10 @@ public class Inky_movements : Ghost_movements
 
             MouseText.text = "Mode Scatter !";
             timeLeft -= Time.deltaTime;
+
+
+            Debug.DrawLine(transform.position, ScatterPos, Color.blue);
+
             if (estDansSpawn())
                 sortirSpawn();
             else
@@ -198,10 +203,9 @@ public class Inky_movements : Ghost_movements
          * extrémité, qui sera la cible de Inky */
         Vector3 vecteur = new Vector3(posP.x - BlinkyPos.x, posP.y - BlinkyPos.y, 0)*2;
 
-        Debug.DrawLine(BlinkyPos,posP, Color.blue);
-
         Vector3 caseCible = BlinkyPos + vecteur;
-        Debug.DrawLine(BlinkyPos, caseCible, Color.yellow);
+        Debug.DrawLine(BlinkyPos, caseCible, Color.cyan);
+        Debug.DrawLine(transform.position, caseCible, Color.blue);
 
         return caseCible;
 

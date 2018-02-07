@@ -4732,7 +4732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cb7d25103b68242bd08b977a4ca0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 8
   MouseText: {fileID: 1414804190}
   posText: {fileID: 621450226}
 --- !u!1001 &623680434

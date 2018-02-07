@@ -51,7 +51,6 @@ public class Clyde_movements : Ghost_movements
         updatePacPos();
         //directionPac = PacmanScript.getDirection();
 
-        //Debug.DrawLine(PacmanPos, quatreCasesDevantPacman(), Color.red);
         //Debug.DrawLine(Cell, quatreCasesDevantPacman(), Color.green);
 
         //Comportement différente en fonction de l'état du fantome
@@ -130,13 +129,16 @@ public class Clyde_movements : Ghost_movements
         else if (distanceEntreClydeEtPacman() >= 8.0f)
         { //Mode Chase :  poursuis Pacman.
 
-                if (estDansSpawn())
+            Debug.DrawLine(transform.position, PacmanPos, Color.yellow);
+            if (estDansSpawn())
                     sortirSpawn();
                 else
                     poursuivre(PacmanPos);
         }
         else
         { //Mode Scatter : Il va roder dans l'angle de la map qui lui est attribué.
+
+            Debug.DrawLine(transform.position, ScatterPos, Color.yellow);
 
             if (estDansSpawn())
                 sortirSpawn();

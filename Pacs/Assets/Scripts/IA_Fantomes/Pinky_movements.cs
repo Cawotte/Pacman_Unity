@@ -51,7 +51,7 @@ public class Pinky_movements : Ghost_movements {
         updatePacPos();
         directionPac = PacmanScript.getDirection();
 
-        Debug.DrawLine(PacmanPos, quatreCasesDevantPacman(), Color.red);
+        Debug.DrawLine(PacmanPos, quatreCasesDevantPacman(), Color.magenta);
         //Debug.DrawLine(Cell, quatreCasesDevantPacman(), Color.green);
 
         //Comportement différente en fonction de l'état du fantome
@@ -61,6 +61,7 @@ public class Pinky_movements : Ghost_movements {
 
         if (state == 1)
         { //Mode Chase : Blinky poursuis Pacman.
+            Debug.DrawLine(transform.position, quatreCasesDevantPacman(), Color.magenta);
 
             MouseText.text = "Mode Chase !";
             timeLeft -= Time.deltaTime;
@@ -80,6 +81,8 @@ public class Pinky_movements : Ghost_movements {
         }
         else if (state == 2)
         { //Mode Scatter : Il va roder dans l'angle de la map qui lui est attribué.
+
+            Debug.DrawLine(transform.position, ScatterPos, Color.magenta);
 
             MouseText.text = "Mode Scatter !";
             timeLeft -= Time.deltaTime;
