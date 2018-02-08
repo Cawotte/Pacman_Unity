@@ -7,6 +7,15 @@ using System.Linq;
 /// <summary>
 /// A little home-made script to align plateform and to some stuff
 /// </summary>
+/// 
+
+
+/*
+ * Note d'Elie Ensuque : Ce script n'est pas de moi !
+ * On me l'a fourni pour faciliter le placement des prefabs de pac-gommes.
+ * */
+
+
 public class MappingEditor : EditorWindow {
 
 	private GameObject selection; //The first selected GameObject

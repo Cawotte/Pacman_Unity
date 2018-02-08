@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Buttons_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Editeur\MappingEditor (1).cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Grid_character.cs" />
@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\MovePacman.cs" />
      <Compile Include="Assets\Scripts\Pacman_collisions.cs" />
      <Compile Include="Assets\Scripts\TileMapTest.cs" />
+     <Compile Include="Assets\Scripts\UI\Buttons_Behaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

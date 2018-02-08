@@ -30,7 +30,8 @@ public class Buttons_Behaviour : MonoBehaviour {
         }
     }
 
-    public void audio_onOff()
+    //Eteint le son
+    public void sfx_OnOff()
     {
         AudioSource sfx = GameObject.Find("Pacman").GetComponent<AudioSource>();
         if (onOff) {

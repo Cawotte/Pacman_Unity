@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
      * **/
 
     public static int Score; //Contient le score.
-    public static int numPellet; //Mémorise le nombre de points restant à récolter.
+    public static int numPellet; //Mémorise le nombre de pac-gommes restantes
 
     //UI
     public Text ScoreText;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
     //Etat dans lequel doit être tout les fantomes. Il est en static pour que le script "Pacman_collisions" puisse facilement y accéder pour modifier l'état
     //lorsquu'n super point est mangé.
-    static public int state;
+    public int state;
     public bool frightened;
 
     //Des constantes avec le temps de chaque mode.
@@ -66,18 +66,6 @@ public class GameManager : MonoBehaviour {
             //si TimeLeft est égale à 20.0, alors Timeleft sera égale à 0 ou moins au bout de 20s.
         timeLeft -= Time.deltaTime; 
 
-
-        //Si les fantomes viennent d'être effrayé à l'instant :
-        if (state == 3 && !frightened)
-        {
-            frightened = true;
-            timeLeft = DUREE_AFRAID;
-            foreach (Ghost_movements fantome in GhostScripts)
-            {
-                fantome.setState(state);
-                fantome.deviensEffraye();
-            }
-        }
 
         //Lorsque le timer se termine, on change le mode des fantomes.
         if (timeLeft <= 0.0f)
@@ -128,11 +116,29 @@ public class GameManager : MonoBehaviour {
             MouseText.text = "Mode Frightened !";
 
         //ScoreText.text = "Score = " + GameManager.Score + "\n Nombre de pellets restantes :" + numPellet;
+        /*
         ScoreText.text = "DATA :"+
                "\n\tREMAINING PELLETS : " + numPellet +
                "\n\tPELLETS EATEN : " + Score +
                "\n\tSCORE : " + Score * 10;
+        */
 
+        ScoreText.text = "Score : " + Score +
+            "\nNombre de Pac-Gommes\nrestantes :" + numPellet +
+            "\nVies Restantes : " + "X X X";
+    }
+
+
+    // Effraie tout les fantomes, appelé par Pacman_collisions, lorsque Pacman mange un super pac-gomme.
+   public void Frighten()
+   {
+        timeLeft = DUREE_AFRAID;
+        state = 3;
+        foreach (Ghost_movements fantome in GhostScripts)
+        {
+            fantome.setState(state);
+            fantome.deviensEffraye();
+        }
     }
     
 }

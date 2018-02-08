@@ -17,6 +17,8 @@ public class Pacman_movements : Grid_character {
     private float moveVertical;
     private bool moving;
 
+    private int nbVies; //Nombre de vie de Pacman
+
     // Use this for initialization
     void Start()
     {
@@ -32,6 +34,8 @@ public class Pacman_movements : Grid_character {
 
         //Récupère le sprite Renderer Pacman.
         pacman_SpriteR = GetComponent<SpriteRenderer>();
+
+        nbVies = 3;
     }
 
 
@@ -85,22 +89,12 @@ public class Pacman_movements : Grid_character {
             }
         }
 
-        /*
-        Vector3Int cellPosWorld = tilemap.WorldToCell(transform.position);
-        Vector3Int cellPosTilemap = tilemap.WorldToCell(transform.position);
-        Vector3 posPacmanCell = tilemap.GetCellCenterWorld(cellPosWorld);
-        posText.text =
-            //"Pacman's Position:x=" + transform.position.x + ",y=" + transform.position.y +
-            "\nPacman's gridCell : " + cellPosWorld +
-            "\nCell to Pos :" + tilemap.CellToWorld(cellPosWorld) +
-            "\nPacman's TileCell : " + cellPosTilemap +
-            "\nTilemap Boundaries : " + tilemap.localBounds +
-            "\nTilemap size : " + tilemap.size;
-            */
+        //Debug
         posText.text = "Pacman's Cell : " + Cell + //Vector3Int
             "\nPacman's pos : " + transform.position; //Vector3
     }
 
+    //Change la direction de pacman, met à jour son sprite, et la direction vers laquelle il se dirige.
     public void changerDirection()
     {
         direction = newDirection; //On change la direction
@@ -131,5 +125,12 @@ public class Pacman_movements : Grid_character {
         }
     }
 
-
+    public int getVie()
+    {
+        return nbVies;
+    }
+    public void setVie(int vie)
+    {
+        nbVies = vie;
+    }
 }
