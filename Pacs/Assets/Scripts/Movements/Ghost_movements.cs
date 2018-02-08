@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -76,7 +77,7 @@ public class Ghost_movements : Grid_character {
         if (estDansSpawn())
             sortirSpawn();
         else
-            poursuivre(PacmanPos);
+            allerVers(PacmanPos);
 
         MouseText.text =
             //"Pacman's Position:x=" + transform.position.x + ",y=" + transform.position.y +
@@ -99,7 +100,10 @@ public class Ghost_movements : Grid_character {
         return posB;
     }
 
-    public void poursuivre(Vector3 targetPosition)
+    //Fais avancer le fantome dans le labyrinthe en direction de la case cible, en prenant en compte les murs et
+    //choississant une direction à chaque croisement le rapprochant de sa case cible.
+    // 
+    public void allerVers(Vector3 targetPosition)
     {
         if (transform.position != targetPos)
             moveToCell(targetPos);
@@ -200,7 +204,7 @@ public class Ghost_movements : Grid_character {
 
         //On choisit aléatoirement une case parmi celles disponible :
         //Random rnd = new Random();
-        int i = Random.Range(0, listC.Count-1);
+        int i = UnityEngine.Random.Range(0, listC.Count-1);
         //Debug.Log(i, gameObject);
         //Debug.Log(listC[i], gameObject);
 
@@ -229,7 +233,8 @@ public class Ghost_movements : Grid_character {
     {
         //Il y a deux cases vers lesquels se diriger pour sortir du spawn, le fantome se dirige vers
         //la plus proche d'entre elle
-        poursuivre(plusProche(new Vector3(-1, 2, 0), new Vector3(0, 2, 0), Cell));
+        allerVers(plusProche(new Vector3(-1, 2, 0), new Vector3(0, 2, 0), Cell));
+
     }
 
     //Renvoie vrai si la case en argument est un croisement (a 3 cases vide adjacentes ou plus)
@@ -294,4 +299,104 @@ public class Ghost_movements : Grid_character {
         timeLeft = time;
     }
 
+    ////////-----------------------------------------------------
+    /////////--------------------------------------------------------
+
+        /* Fonction du mode Chase des fantomes. Elle prend en paramètre la position de la case cible vers laquelle
+         * le fantome va essayer de se diriger, elle varie en fonction du fantome.
+         * 
+         * */
+    public void Chase(Vector3 cible)
+    {
+        MouseText.text = "Mode Chase !";
+        timeLeft -= Time.deltaTime;
+
+
+        if (estDansSpawn())
+            sortirSpawn();
+        else
+            allerVers(cible);
+
+        if (timeLeft <= 0.0f)
+        {
+            faireDemiTour();
+            timeLeft = DUREE_SCATTER; //On réinitialise le timer avec la durée de Scatter.
+            state = 2;
+        }
+    }
+
+    public void Scatter()
+    {
+        MouseText.text = "Mode Scatter !";
+        timeLeft -= Time.deltaTime;
+
+
+        if (estDansSpawn())
+            sortirSpawn();
+        else
+            allerVers(ScatterPos);
+
+        if (timeLeft <= 0.0f)
+        {
+            faireDemiTour();
+            timeLeft = DUREE_CHASE; //On réinitialise le timer avec la durée de Chase
+            state = 1;
+        }
+    }
+
+    public void Frightened()
+    {
+
+        MouseText.text = "Mode Frightened !";
+
+        if (!afraid)
+        {
+            speed -= REDUCTION_VITESSE;
+            ghost_SpriteR.sprite = GhostAfraid;
+            afraid = true;
+            timeLeft = DUREE_AFRAID;
+            targetPos = caseDevant();
+        }
+
+        timeLeft -= Time.deltaTime;
+
+        if (transform.position != targetPos)
+            moveToCell(targetPos);
+        else
+        {
+            if (estCroisement(Cell))
+                targetPos = caseAdjAleatoire();
+            else
+                targetPos = caseDevant();
+            updateDirection(targetPos);
+        }
+
+        if (timeLeft <= 0.0f)
+        {
+            ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
+            speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
+            state = 2; //Il revient à l'état Scatter
+            timeLeft = DUREE_SCATTER;
+            afraid = false;
+        }
+    }
+
+    public void Mort()
+    {
+
+        timeLeft -= Time.deltaTime;
+
+
+        if (timeLeft <= 0.0f)
+        { //Il renait
+            ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
+            speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
+            state = 1; //Il revient à l'état chase
+            timeLeft = DUREE_CHASE;
+            afraid = false;
+        }
+    }
+
+
 }
+        

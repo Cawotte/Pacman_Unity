@@ -54,15 +54,15 @@
      <Compile Include="Assets\Scripts\Buttons_Behaviour.cs" />
      <Compile Include="Assets\Scripts\Editeur\MappingEditor (1).cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Ghost_movements.cs" />
      <Compile Include="Assets\Scripts\Grid_character.cs" />
-     <Compile Include="Assets\Scripts\IA_Fantomes\Blinky_movements.cs" />
-     <Compile Include="Assets\Scripts\IA_Fantomes\Clyde_movements.cs" />
-     <Compile Include="Assets\Scripts\IA_Fantomes\Inky_movements.cs" />
-     <Compile Include="Assets\Scripts\IA_Fantomes\Pinky_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Blinky_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Clyde_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Ghost_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Inky_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Pacman_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Pinky_movements.cs" />
      <Compile Include="Assets\Scripts\MovePacman.cs" />
      <Compile Include="Assets\Scripts\Pacman_collisions.cs" />
-     <Compile Include="Assets\Scripts\Pacman_movements.cs" />
      <Compile Include="Assets\Scripts\TileMapTest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

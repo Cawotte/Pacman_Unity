@@ -38,7 +38,7 @@ public class Blinky_movements : Ghost_movements {
 	// Update is called once per frame
 	void Update () {
 
-        //Mets à jour sa propre position dans Cell et celle du Pacman pour le poursuivre.
+        //Mets à jour sa propre position dans Cell et celle du Pacman pour le allerVers.
         updateCell();
         updatePacPos();
 
@@ -53,13 +53,12 @@ public class Blinky_movements : Ghost_movements {
             MouseText.text = "Mode Chase !";
             timeLeft -= Time.deltaTime;
 
-
             Debug.DrawLine(transform.position, PacmanPos, Color.red);
 
             if (estDansSpawn())
                 sortirSpawn();
             else
-                poursuivre(PacmanPos);
+                allerVers(PacmanPos);
 
             if (timeLeft <= 0.0f)
             {
@@ -81,7 +80,7 @@ public class Blinky_movements : Ghost_movements {
             if (estDansSpawn())
                 sortirSpawn();
             else
-                poursuivre(ScatterPos);
+                allerVers(ScatterPos);
 
             if (timeLeft <= 0.0f)
             {
@@ -109,7 +108,7 @@ public class Blinky_movements : Ghost_movements {
             timeLeft -= Time.deltaTime;
 
 
-            //poursuivre(ScatterPos);
+            //allerVers(ScatterPos);
             
             //Le Fantome choisit une direction aléatoire lorsqu'il arrive à un croisement.
             if (transform.position != targetPos)

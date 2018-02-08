@@ -4,15 +4,11 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-public class Inky_movements : Ghost_movements
+public class Clyde_movements : Ghost_movements
 {
 
-    
-    Transform BlinkyTrans;
-    Vector3 BlinkyPos;
-    Grid_character PacmanScript;
-    string directionPac;
-
+    //Grid_character PacmanScript;
+    //string directionPac;
 
     // Use this for initialization
     void Start()
@@ -27,13 +23,13 @@ public class Inky_movements : Ghost_movements
         updatePacPos();
 
         //Direction fantome
-        direction = "Up";
+        direction = "Left";
         targetPos = caseDevant();
 
         //Etat Fantome
         state = 1; //Il commence en Chase
         afraid = false;
-        timeLeft = DUREE_CHASE;
+        //timeLeft = DUREE_CHASE;
         PositionDepart = tilemap.LocalToWorld(Cell);
 
         //Sprite fantomes
@@ -41,9 +37,7 @@ public class Inky_movements : Ghost_movements
         GhostNormal = ghost_SpriteR.sprite;
 
         //On recupere la référence du script de Pacman, pour récupérer sa direction.
-        BlinkyTrans = (GameObject.Find("Blinky")).GetComponent<Transform>();
-
-        PacmanScript = (GameObject.Find("Pacman")).GetComponent<Grid_character>();
+        //PacmanScript = (GameObject.Find("Pacman")).GetComponent<Grid_character>();
 
 
     }
@@ -52,12 +46,10 @@ public class Inky_movements : Ghost_movements
     void Update()
     {
 
-        //Mets à jour sa propre position dans Cell et celle du Pacman pour le poursuivre.
+        //Mets à jour sa propre position dans Cell et celle du Pacman pour le allerVers.
         updateCell();
         updatePacPos();
-        BlinkyPos = BlinkyTrans.position;
-        directionPac = PacmanScript.getDirection();
-
+        //directionPac = PacmanScript.getDirection();
 
         //Debug.DrawLine(Cell, quatreCasesDevantPacman(), Color.green);
 
@@ -66,48 +58,9 @@ public class Inky_movements : Ghost_movements
         // Il change de mode entre Scatter et Chase périodiquement, 7s de Scatter pour 20s de Chase. Frightened se déclenche uniquement si Pacman mange une super boulette.
         // Quand le fantome change de mode entre Chase/Scatter, il fait immédiatement demi-tour. 
 
-        if (state == 1)
-        { //Mode Chase : Blinky poursuis Pacman.
-
-            MouseText.text = "Mode Chase !";
-            timeLeft -= Time.deltaTime;
 
 
-            if (estDansSpawn())
-                sortirSpawn();
-            else
-                poursuivre( positionVecteurBlinkyPacman() );
-
-            if (timeLeft <= 0.0f)
-            {
-                faireDemiTour();
-                timeLeft = DUREE_SCATTER; //On réinitialise le timer avec la durée de Scatter.
-                state = 2;
-            }
-
-        }
-        else if (state == 2)
-        { //Mode Scatter : Il va roder dans l'angle de la map qui lui est attribué.
-
-            MouseText.text = "Mode Scatter !";
-            timeLeft -= Time.deltaTime;
-
-
-            Debug.DrawLine(transform.position, ScatterPos, Color.blue);
-
-            if (estDansSpawn())
-                sortirSpawn();
-            else
-                poursuivre(ScatterPos);
-
-            if (timeLeft <= 0.0f)
-            {
-                faireDemiTour();
-                timeLeft = DUREE_CHASE; //On réinitialise le timer avec la durée de Chase
-                state = 1;
-            }
-        }
-        else if (state == 3)
+        if (state == 3)
         { //Mode Frightened : Le fantome est ralenti, sensible, et se déplace aléatoirement.
           //On utilise un autre compteur pour calculer la durée de Frightened car timeLeft doit être en Pause.
 
@@ -126,7 +79,7 @@ public class Inky_movements : Ghost_movements
             timeLeft -= Time.deltaTime;
 
 
-            //poursuivre(ScatterPos);
+            //allerVers(ScatterPos);
 
             //Le Fantome choisit une direction aléatoire lorsqu'il arrive à un croisement.
             if (transform.position != targetPos)
@@ -152,13 +105,13 @@ public class Inky_movements : Ghost_movements
             {
                 ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
                 speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
-                state = 2; //Il revient à l'état Scatter
+                state = 1; //Il revient à l'état Scatter
                 timeLeft = DUREE_SCATTER;
                 afraid = false;
             }
 
         }
-        else //Sinon il est "mort"
+        else if ( state == 0 )//Sinon il est "mort"
         {
 
             timeLeft -= Time.deltaTime;
@@ -173,42 +126,32 @@ public class Inky_movements : Ghost_movements
                 afraid = false;
             }
         }
+        else if (distanceEntreClydeEtPacman() >= 8.0f)
+        { //Mode Chase :  poursuis Pacman.
 
-    }
-
-    public Vector3 deuxCasesDevantPacman()
-    {
-        switch (directionPac)
-        {
-            case "Right":
-                return PacmanPos + (Vector3.right * 2);
-            case "Left":
-                return PacmanPos + (Vector3.left * 2);
-            case "Down":
-                return PacmanPos + (Vector3.down * 2);
-            case "Up":
-                return PacmanPos + (Vector3.up * 2);
-            default:
-                Debug.Log("quatreCasesDevant : CAS DEFAULT !", gameObject);
-                return PacmanPos;
+            Debug.DrawLine(transform.position, PacmanPos, Color.yellow);
+            if (estDansSpawn())
+                    sortirSpawn();
+                else
+                    allerVers(PacmanPos);
         }
+        else
+        { //Mode Scatter : Il va roder dans l'angle de la map qui lui est attribué.
+
+            Debug.DrawLine(transform.position, ScatterPos, Color.yellow);
+
+            if (estDansSpawn())
+                sortirSpawn();
+            else
+                allerVers(ScatterPos);
+        }
+
     }
+    
 
-    //Fonction propre à Pinky, qui renvoie le centre de la case 4 cases devant Pacman :
-    public Vector3 positionVecteurBlinkyPacman()
+    public float distanceEntreClydeEtPacman()
     {
-        Vector3 posP = deuxCasesDevantPacman();
-        /*
-         * On trace un vecteur entre la position de Blinky et deux cases devant Pacman, on double la taille de ce vecteur, et on renvoie son 
-         * extrémité, qui sera la cible de Inky */
-        Vector3 vecteur = new Vector3(posP.x - BlinkyPos.x, posP.y - BlinkyPos.y, 0)*2;
-
-        Vector3 caseCible = BlinkyPos + vecteur;
-        Debug.DrawLine(BlinkyPos, caseCible, Color.cyan);
-        Debug.DrawLine(transform.position, caseCible, Color.blue);
-
-        return caseCible;
-
+        return dist(transform.position, PacmanPos);
     }
 }
 
