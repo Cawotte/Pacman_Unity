@@ -5,8 +5,7 @@ using UnityEngine.UI;
 abstract public class Grid_character : MonoBehaviour {
 
     //var
-    public float speed;
-    protected bool moving;
+    public float speed; //Vitesse du personnage
 
     protected string direction;
 
@@ -20,28 +19,7 @@ abstract public class Grid_character : MonoBehaviour {
     //UI
     public Text MouseText;
 
-    // Use this for initialization
-    /*
-    public void Start () {
-
-        tilemap = (GameObject.Find("Tilemap")).GetComponent<Tilemap>();
-        Cell = tilemap.WorldToCell(transform.position);
-        targetPos = transform.position;
-        moving = false;
-
-
-        Debug.Log("Start.Grid_mov", gameObject);
-
-    } */
-	
-	/* Update is called once per frame
-	protected void Update () {
-
-        updateCell();
-
-
-    } */
-
+  
 
     //Renvoie les positions centrales (world) des cases adjacentes 
     public Vector3 rightCell() {
@@ -109,6 +87,12 @@ abstract public class Grid_character : MonoBehaviour {
                 return "Top";//PLACEHOLDER
         }
     }
+    
+    //Retourne vrai si la case en argument n'est pas une des deux cases de la porte du spawn des fantomes.
+    public bool nestPasEntreeSpawn(Vector3 pos)
+    {
+        return pos != new Vector3(0, 2, 0) && pos != new Vector3(1, 2, 0);
+    }
 
     //Retourne Vrai si la case donné est un mur
     public bool isWall(Vector3Int posCell) {
@@ -132,15 +116,28 @@ abstract public class Grid_character : MonoBehaviour {
         transform.position = Vector3.MoveTowards(transform.position, pos, step);
     }
 
+    //Renvoie la distance entre deux cellules.
+    public float dist(Vector3 posA, Vector3 posB)
+    {
+        return Mathf.Sqrt(Mathf.Pow(posB.x - posA.x, 2) + Mathf.Pow(posB.y - posA.y, 2));
+    }
+    //Renvoie les coordonnées de la position (posA ou posB) la plus proche de targetPos.
+    public Vector3 plusProche(Vector3 posA, Vector3 posB, Vector3 targetPos)
+    {
+        if (dist(posA, targetPos) <= dist(posB, targetPos))
+            return posA;
+        return posB;
+    }
+
     //Met à jour la position Cell avec la position de la case actuelle.
-    //Pas très important d'en faire une fonction à part, c'est surtout pour ne jamais à avoir à manipuler directement tilemap dans les classe filles.
-    //(Cette classe est une boite à outil qui nous sert à mieux construire les déplacements en grille)
+    //Pas très important d'en faire une fonction à part, c'est surtout pour ne jamais à avoir à manipuler directement le Component tilemap dans les classe filles.
     public void updateCell()
     {
-        Vector3Int CellActuelle = tilemap.WorldToCell(transform.position);
-        if (Cell != CellActuelle)
-            Cell = CellActuelle;
+        Cell = tilemap.WorldToCell(transform.position);
     }
+
+
+    //Accesseurs
 
     public void setTargetPos(Vector3 pos)
     {

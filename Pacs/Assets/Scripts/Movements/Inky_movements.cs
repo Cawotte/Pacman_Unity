@@ -7,7 +7,22 @@ using UnityEngine.UI;
 public class Inky_movements : Ghost_movements
 {
 
-    
+
+    /*
+    * Comportement du fantome Bleu, Inky :
+    * 
+    * Inky a le comportement le plus spécifique des fantomes :
+    *  - En mode Scatter, il tourne dans le coin inférieur droit de l'écran
+    *  - en mode Chase, il a une case cible assez particulière a calculer. Il travaille de concert avec Blinky (fantome rouge) pour attraper Pacman :
+    *          On trace un vecteur entre la position de Blinky, et la position de la case 2 cases devant Pacman.
+    *          On double la longueur de ce vecteur.
+    *          Ce vecteur pointe alors sur la case cible d'Inky.
+    * 
+    * */
+
+
+
+        //Nécessaire pour connaitre la position de Blinky, et la direction de Pacman pour le calcul de la case cible.
     Transform BlinkyTrans;
     Vector3 BlinkyPos;
     Grid_character PacmanScript;
@@ -32,9 +47,7 @@ public class Inky_movements : Ghost_movements
 
         //Etat Fantome
         state = 1; //Il commence en Chase
-        afraid = false;
-        timeLeft = DUREE_CHASE;
-        PositionDepart = tilemap.LocalToWorld(Cell);
+        dejaMort = false;
 
         //Sprite fantomes
         ghost_SpriteR = gameObject.GetComponent<SpriteRenderer>();
@@ -58,120 +71,21 @@ public class Inky_movements : Ghost_movements
         BlinkyPos = BlinkyTrans.position;
         directionPac = PacmanScript.getDirection();
 
-
-        //Debug.DrawLine(Cell, quatreCasesDevantPacman(), Color.green);
-
-        //Comportement différente en fonction de l'état du fantome
-        // 1 : Chase, 2 : Scatter, 3 : Frightened.
-        // Il change de mode entre Scatter et Chase périodiquement, 7s de Scatter pour 20s de Chase. Frightened se déclenche uniquement si Pacman mange une super boulette.
-        // Quand le fantome change de mode entre Chase/Scatter, il fait immédiatement demi-tour. 
-
-        if (state == 1)
-        { //Mode Chase : Blinky poursuis Pacman.
-
-            MouseText.text = "Mode Chase !";
-            timeLeft -= Time.deltaTime;
-
-
-            if (estDansSpawn())
-                sortirSpawn();
-            else
-                allerVers( positionVecteurBlinkyPacman() );
-
-            if (timeLeft <= 0.0f)
-            {
-                faireDemiTour();
-                timeLeft = DUREE_SCATTER; //On réinitialise le timer avec la durée de Scatter.
-                state = 2;
-            }
-
-        }
-        else if (state == 2)
-        { //Mode Scatter : Il va roder dans l'angle de la map qui lui est attribué.
-
-            MouseText.text = "Mode Scatter !";
-            timeLeft -= Time.deltaTime;
-
-
-            Debug.DrawLine(transform.position, ScatterPos, Color.blue);
-
-            if (estDansSpawn())
-                sortirSpawn();
-            else
-                allerVers(ScatterPos);
-
-            if (timeLeft <= 0.0f)
-            {
-                faireDemiTour();
-                timeLeft = DUREE_CHASE; //On réinitialise le timer avec la durée de Chase
-                state = 1;
-            }
-        }
-        else if (state == 3)
-        { //Mode Frightened : Le fantome est ralenti, sensible, et se déplace aléatoirement.
-          //On utilise un autre compteur pour calculer la durée de Frightened car timeLeft doit être en Pause.
-
-            MouseText.text = "Mode Frightened !";
-
-            //Si il vient d'entrer en mode Frightened
-            if (!afraid)
-            {
-                speed -= REDUCTION_VITESSE;
-                ghost_SpriteR.sprite = GhostAfraid;
-                afraid = true;
-                timeLeft = DUREE_AFRAID;
-                targetPos = caseDevant();
-            }
-
-            timeLeft -= Time.deltaTime;
-
-
-            //allerVers(ScatterPos);
-
-            //Le Fantome choisit une direction aléatoire lorsqu'il arrive à un croisement.
-            if (transform.position != targetPos)
-            {
-                //Debug.Log("transform != targetpos", gameObject);
-                moveToCell(targetPos);
-            }
-            else
-            {
-                //Debug.Log("else", gameObject);
-                if (estCroisement(Cell))
-                {
-                    //Debug.Log("C'est un croisement!", gameObject);
-                    targetPos = caseAdjAleatoire();
-                }
-                else
-                    targetPos = caseDevant();
-                updateDirection(targetPos);
-            }
-
-            //Lorsque la durée de l'effraiement du Fantome est terminée :
-            if (timeLeft <= 0.0f)
-            {
-                ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
-                speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
-                state = 2; //Il revient à l'état Scatter
-                timeLeft = DUREE_SCATTER;
-                afraid = false;
-            }
-
-        }
-        else //Sinon il est "mort"
+      
+        switch (state)
         {
-
-            timeLeft -= Time.deltaTime;
-
-
-            if (timeLeft <= 0.0f)
-            { //Il renait
-                ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
-                speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
-                state = 1; //Il revient à l'état chase
-                timeLeft = DUREE_CHASE;
-                afraid = false;
-            }
+            case 0: //Lorsque le fantome est mort
+                Dead();
+                break;
+            case 1: //Lorsqu'il est en mode Chase
+                ChaseAndScatter(positionVecteurBlinkyPacman());
+                break;
+            case 2: //Lorsqu'il est en mode Scatter
+                ChaseAndScatter(ScatterPos);
+                break;
+            case 3: //Lorsqu'il est en mode Effrayé
+                Frightened();
+                break;
         }
 
     }
@@ -205,7 +119,6 @@ public class Inky_movements : Ghost_movements
 
         Vector3 caseCible = BlinkyPos + vecteur;
         Debug.DrawLine(BlinkyPos, caseCible, Color.cyan);
-        Debug.DrawLine(transform.position, caseCible, Color.blue);
 
         return caseCible;
 

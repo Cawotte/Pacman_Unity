@@ -15,6 +15,7 @@ public class Pacman_movements : Grid_character {
 
     private float moveHorizontal;
     private float moveVertical;
+    private bool moving;
 
     // Use this for initialization
     void Start()
@@ -66,8 +67,8 @@ public class Pacman_movements : Grid_character {
         }
         else //Si il est déjà dessus, on change de cible.
         {
-            //Si newDirection est une direction valide ( sans mur ), c'est la nouvelle direction.
-            if (newDirection != direction && !isWall(caseAdj(newDirection)))
+            //Si newDirection est une direction valide ( sans mur et n'est pas l'entrée du spawn des fantomes ), c'est la nouvelle direction.
+            if (newDirection != direction && !isWall(caseAdj(newDirection)) /*&& nestPasEntreeSpawn(caseAdj(newDirection))*/ )
                 changerDirection();
             //Sinon tant que la direction actuelle est valide il continue vers celle-ci.
             else if (!isWall(caseAdj(direction)))

@@ -1390,7 +1390,6 @@ GameObject:
   - component: {fileID: 213336710}
   - component: {fileID: 213336709}
   - component: {fileID: 213336712}
-  - component: {fileID: 213336708}
   m_Layer: 9
   m_Name: Pinky
   m_TagString: Ghost
@@ -1398,22 +1397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &213336708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114841087954204730, guid: 1075ee9766f723848903ea97b8b32513,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 213336707}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e815b2df6b03e44bc67e6277686a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  MouseText: {fileID: 1414804190}
-  ScatterPos: {x: -14, y: 12, z: 0}
-  GhostAfraid: {fileID: 21300098, guid: f24031bf865d3cc4086633173fe7397b, type: 3}
 --- !u!50 &213336709
 Rigidbody2D:
   serializedVersion: 4
@@ -5275,6 +5258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 478558171}
+  MouseText: {fileID: 1414804190}
+  frightened: 0
 --- !u!4 &662242955
 Transform:
   m_ObjectHideFlags: 0
@@ -6666,7 +6651,6 @@ GameObject:
   - component: {fileID: 822524296}
   - component: {fileID: 822524295}
   - component: {fileID: 822524298}
-  - component: {fileID: 822524294}
   m_Layer: 9
   m_Name: Inky
   m_TagString: Ghost
@@ -6674,22 +6658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &822524294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114841087954204730, guid: 1075ee9766f723848903ea97b8b32513,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 822524293}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e815b2df6b03e44bc67e6277686a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  MouseText: {fileID: 1414804190}
-  ScatterPos: {x: 13, y: -14, z: 0}
-  GhostAfraid: {fileID: 21300098, guid: f24031bf865d3cc4086633173fe7397b, type: 3}
 --- !u!50 &822524295
 Rigidbody2D:
   serializedVersion: 4
@@ -12903,7 +12871,6 @@ GameObject:
   - component: {fileID: 1553946251}
   - component: {fileID: 1553946250}
   - component: {fileID: 1553946253}
-  - component: {fileID: 1553946249}
   m_Layer: 9
   m_Name: Clyde
   m_TagString: Ghost
@@ -12911,22 +12878,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1553946249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114841087954204730, guid: 1075ee9766f723848903ea97b8b32513,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1553946248}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e815b2df6b03e44bc67e6277686a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  MouseText: {fileID: 1414804190}
-  ScatterPos: {x: -14, y: -17, z: 0}
-  GhostAfraid: {fileID: 21300098, guid: f24031bf865d3cc4086633173fe7397b, type: 3}
 --- !u!50 &1553946250
 Rigidbody2D:
   serializedVersion: 4

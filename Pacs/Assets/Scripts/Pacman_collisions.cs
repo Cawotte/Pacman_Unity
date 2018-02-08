@@ -5,36 +5,39 @@ using UnityEngine.UI;
 
 public class Pacman_collisions : MonoBehaviour {
     
-
+    /*
+     * Cette classe est appellé dès que Pacman entre en collision avec un autre élément :
+     * Si c'est un point, il le mange et augmente son score.
+     * Si c'est un super point, il le mange, augmente son score et effraie les fantomes.
+     * Si c'est un fantome, soit Pacman meurt et perds des points, soit le fantome est effrayé et pacman le mange et gagne des points.
+     **/ 
     
 
     void OnTriggerEnter2D (Collider2D coll) {
 
-        if (/*gameObject.tag == "Player" &&*/ coll.gameObject.tag == "Pellet" )
+        if ( coll.gameObject.tag == "Pellet" )
         {
             GameManager.Score++; //A changer
             GameManager.numPellet--;
             Destroy(coll.gameObject);
         }
 
-        if (coll.gameObject.tag == "SuperPellet")
+        if ( coll.gameObject.tag == "SuperPellet")
         {
-            //Debug.Log("SuperPellet mangée !", gameObject);
             GameManager.Score++; //A changer
             GameManager.numPellet--;
-            Destroy(coll.gameObject);
+            Destroy(coll.gameObject); //On détruit le point.
 
-            //Tout les fantomes deviennent effrayés.
-            Component[] GhostScripts;
-            GhostScripts = GameObject.Find("Fantomes").GetComponentsInChildren<Ghost_movements>();
-            foreach (Ghost_movements script in GhostScripts)
-                script.setState(3);
+            //On règle l'état à 3 pour Frightened dans le GameManager, a pour conséquence d'effrayer tout les fantomes.
+            GameManager.state = 3;
 
         }
 
-        if (/*coll.gameObject.tag == "Player" &&*/ coll.gameObject.tag == "Ghost")
+        if ( coll.gameObject.tag == "Ghost")
         {
+
             int stateGhost = coll.gameObject.GetComponent<Ghost_movements>().getState();
+
             if (stateGhost != 3) //Si le fantome n'est pas effrayé, Pacman meurt.
             {
                 GameObject.Find("Pacman").GetComponent<Transform>().position = new Vector3(1, -9, 0);
@@ -43,13 +46,6 @@ public class Pacman_collisions : MonoBehaviour {
             }
             else //Le Fantome est effrayé, on le mange.
             {
-                //PlaceHolder de la mort, le fantome est renvoyé dans la maison.
-                /*
-                coll.gameObject.GetComponent<Transform>().position = new Vector3(0, 0, 0);
-                coll.gameObject.GetComponent<Ghost_movements>().setTargetPos(new Vector3(0, 0, 0));
-                coll.gameObject.GetComponent<Ghost_movements>().setState(2);
-                */
-
                 coll.gameObject.GetComponent<Ghost_movements>().death();
             }
         }

@@ -7,8 +7,15 @@ using UnityEngine.UI;
 public class Clyde_movements : Ghost_movements
 {
 
-    //Grid_character PacmanScript;
-    //string directionPac;
+    /*
+     * Comportement du fantome Orange, Clyde :
+     * 
+     * Contrairement aux autres fantomes, il n'obéit pas au timer pour ses modes, mais en fonction de sa distance avec Pacman.
+     * 
+     * Si Clyde est à 8 cases ou plus de Pacman, il est en mode Chase et a pour cible Pacman, comme Blinky le fantome orange.
+     * Si Clyde est à moins de 8 cases de Pacman, il est alors en mode Scatter et part tourner dans le coin inférieur gauche de l'écran.
+     * 
+     * */
 
     // Use this for initialization
     void Start()
@@ -18,6 +25,7 @@ public class Clyde_movements : Ghost_movements
         tilemap = (GameObject.Find("Tilemap")).GetComponent<Tilemap>();
         Cell = tilemap.WorldToCell(transform.position);
         targetPos = transform.position;
+
         //Ghost Movement init
         PacTransform = (GameObject.Find("Pacman")).GetComponent<Transform>();
         updatePacPos();
@@ -27,17 +35,13 @@ public class Clyde_movements : Ghost_movements
         targetPos = caseDevant();
 
         //Etat Fantome
-        state = 1; //Il commence en Chase
-        afraid = false;
-        //timeLeft = DUREE_CHASE;
-        PositionDepart = tilemap.LocalToWorld(Cell);
+        state = 1;
+        dejaMort = false;
 
         //Sprite fantomes
         ghost_SpriteR = gameObject.GetComponent<SpriteRenderer>();
         GhostNormal = ghost_SpriteR.sprite;
-
-        //On recupere la référence du script de Pacman, pour récupérer sa direction.
-        //PacmanScript = (GameObject.Find("Pacman")).GetComponent<Grid_character>();
+   
 
 
     }
@@ -46,12 +50,9 @@ public class Clyde_movements : Ghost_movements
     void Update()
     {
 
-        //Mets à jour sa propre position dans Cell et celle du Pacman pour le allerVers.
+        //Mets à jour sa propre position dans Cell et celle du Pacman pour les calculs.
         updateCell();
         updatePacPos();
-        //directionPac = PacmanScript.getDirection();
-
-        //Debug.DrawLine(Cell, quatreCasesDevantPacman(), Color.green);
 
         //Comportement différente en fonction de l'état du fantome
         // 1 : Chase, 2 : Scatter, 3 : Frightened.
@@ -63,88 +64,25 @@ public class Clyde_movements : Ghost_movements
         if (state == 3)
         { //Mode Frightened : Le fantome est ralenti, sensible, et se déplace aléatoirement.
           //On utilise un autre compteur pour calculer la durée de Frightened car timeLeft doit être en Pause.
-
-            MouseText.text = "Mode Frightened !";
-
-            //Si il vient d'entrer en mode Frightened
-            if (!afraid)
-            {
-                speed -= REDUCTION_VITESSE;
-                ghost_SpriteR.sprite = GhostAfraid;
-                afraid = true;
-                timeLeft = DUREE_AFRAID;
-                targetPos = caseDevant();
-            }
-
-            timeLeft -= Time.deltaTime;
-
-
-            //allerVers(ScatterPos);
-
-            //Le Fantome choisit une direction aléatoire lorsqu'il arrive à un croisement.
-            if (transform.position != targetPos)
-            {
-                //Debug.Log("transform != targetpos", gameObject);
-                moveToCell(targetPos);
-            }
-            else
-            {
-                //Debug.Log("else", gameObject);
-                if (estCroisement(Cell))
-                {
-                    //Debug.Log("C'est un croisement!", gameObject);
-                    targetPos = caseAdjAleatoire();
-                }
-                else
-                    targetPos = caseDevant();
-                updateDirection(targetPos);
-            }
-
-            //Lorsque la durée de l'effraiement du Fantome est terminée :
-            if (timeLeft <= 0.0f)
-            {
-                ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
-                speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
-                state = 1; //Il revient à l'état Scatter
-                timeLeft = DUREE_SCATTER;
-                afraid = false;
-            }
+            Frightened();
 
         }
         else if ( state == 0 )//Sinon il est "mort"
         {
-
-            timeLeft -= Time.deltaTime;
-
-
-            if (timeLeft <= 0.0f)
-            { //Il renait
-                ghost_SpriteR.sprite = GhostNormal; //On rétablit son sprite.
-                speed += REDUCTION_VITESSE; //On rétabli sa vitesse.
-                state = 1; //Il revient à l'état chase
-                timeLeft = DUREE_CHASE;
-                afraid = false;
-            }
+            Dead();
         }
         else if (distanceEntreClydeEtPacman() >= 8.0f)
         { //Mode Chase :  poursuis Pacman.
 
-            Debug.DrawLine(transform.position, PacmanPos, Color.yellow);
-            if (estDansSpawn())
-                    sortirSpawn();
-                else
-                    allerVers(PacmanPos);
+            ChaseAndScatter(PacmanPos);
         }
         else
         { //Mode Scatter : Il va roder dans l'angle de la map qui lui est attribué.
 
-            Debug.DrawLine(transform.position, ScatterPos, Color.yellow);
-
-            if (estDansSpawn())
-                sortirSpawn();
-            else
-                allerVers(ScatterPos);
+            ChaseAndScatter(ScatterPos);
         }
+
+
 
     }
     

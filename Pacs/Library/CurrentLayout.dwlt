@@ -253,8 +253,8 @@ MonoBehaviour:
     y: 0
     width: 964
     height: 532
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -486,24 +486,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d2070000
-    m_LastClickedInstanceID: 2002
+    m_SelectedInstanceIDs: e42e0000
+    m_LastClickedInstanceID: 12004
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000b2280000cc270000262800008c270000e0fb00009e2700001a280000b82800000000000018670200106702007a7f02009228000090270000e82e0000702a0000e4280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Clyde_movements
-      m_OriginalName: Clyde_movements
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 2028
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -579,9 +579,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2070000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff000000002a2e0000762f0000
+    m_SelectedIDs: 2e2a0000
+    m_LastClickedID: 10798
+    m_ExpandedIDs: 9efbffff000000002a2e0000e42e0000762f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -637,9 +637,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.3090217, y: 0.35872722, z: -0.31640625}
+    m_Target: {x: 9.393126, y: -2.2796352, z: -0.3121513}
     speed: 2
-    m_Value: {x: 1.3090217, y: 0.35872722, z: -0.31640625}
+    m_Value: {x: 9.393126, y: -2.2796352, z: -0.3121513}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -659,17 +659,17 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     zGrid:
-      m_Target: 1
+      m_Target: 0
       speed: 2
-      m_Value: 1
+      m_Value: 0
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 33.337284
+    m_Target: 32.941597
     speed: 2
-    m_Value: 33.337284
+    m_Value: 32.941597
   m_Ortho:
     m_Target: 1
     speed: 2
