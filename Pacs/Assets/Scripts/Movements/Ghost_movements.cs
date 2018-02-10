@@ -194,9 +194,9 @@ public class Ghost_movements : Grid_character {
             listC.Add(leftCell());
 
         //On choisit aléatoirement une case parmi celles possibles :
-        int i = UnityEngine.Random.Range(0, listC.Count-1);
-
-        return listC[i];
+        if (listC.Count == 1)
+            return listC[0];
+        return listC[UnityEngine.Random.Range(0, listC.Count - 1)];
     }
 
 
@@ -221,17 +221,6 @@ public class Ghost_movements : Grid_character {
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

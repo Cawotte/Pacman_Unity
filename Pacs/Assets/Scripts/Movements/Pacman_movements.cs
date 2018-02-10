@@ -18,7 +18,8 @@ public class Pacman_movements : Grid_character {
     private float moveVertical;
     private bool moving;
 
-    private int nbVies; //Nombre de vie de Pacman
+    [HideInInspector]
+    public static int nbVies; //Nombre de vie de Pacman
 
     // Use this for initialization
     void Start()
@@ -129,15 +130,12 @@ public class Pacman_movements : Grid_character {
 
     public void death()
     {
+        nbVies--;
         transform.position = new Vector3(1, -9, 0);
         targetPos = new Vector3(1, -9, 0);
         AudioManager.getInstance().Find("Pacman_Death").source.Play();
     }
-
-    public int getVie()
-    {
-        return nbVies;
-    }
+    
     public void setVie(int vie)
     {
         nbVies = vie;

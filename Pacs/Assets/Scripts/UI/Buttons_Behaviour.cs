@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Buttons_Behaviour : MonoBehaviour {
 
     //Les deux sprites sur lesquels le bouton va alterner pour signaler qu'il est en position On/Off
     Sprite ImageOn;
     public Sprite ImageOff;
+
+
+
+    public GameObject PausePanel;
 
     GameManager game_manager;
 
@@ -56,19 +61,27 @@ public class Buttons_Behaviour : MonoBehaviour {
 
     public void pause_onOff()
     {
+        pause(On);
+    }
+
+    public void pause(bool onOff)
+    {
         AudioManager audio = AudioManager.getInstance();
-        if (On)
+        if (onOff) //Si le jeu est en pause, on le reprend.
         {
             game_manager.gamePaused = false;
             audio.UnMuteAllSounds();
             Time.timeScale = 1;
+            PausePanel.SetActive(false);
         }
         else
         {
             game_manager.gamePaused = true;
             audio.MuteAllSounds();
             Time.timeScale = 0;
+            PausePanel.SetActive(true);
         }
+
     }
 
     public void music_onOff()
@@ -76,12 +89,17 @@ public class Buttons_Behaviour : MonoBehaviour {
         AudioManager audio = AudioManager.getInstance();
         if (!On)
         {
-            audio.music.source.Stop();
+            audio.music.source.Pause();
         }
         else
         {
-            audio.music.source.Play();
+            audio.music.source.UnPause();
         }
+    }
+
+    public void quitGame()
+    {
+        Application.Quit();
     }
 
 

@@ -8,6 +8,8 @@ TagManager:
   - Pellet
   - SuperPellet
   - Ghost
+  - GameOver
+  - Victory
   layers:
   - Default
   - TransparentFX

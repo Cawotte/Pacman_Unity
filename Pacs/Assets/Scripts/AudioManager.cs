@@ -73,7 +73,6 @@ public class AudioManager : MonoBehaviour {
             foreach (Sound s in sounds)
             {
                 s.source.mute = false;
-                s.source.Play();
             }
         }
             

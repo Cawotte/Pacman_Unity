@@ -46,6 +46,12 @@ public class GameManager : MonoBehaviour {
     public bool gamePaused = false;
 
 
+    public GameObject GameOverPanel;
+    public Text gameOverText;
+    public GameObject VictoryPanel;
+    public Text victoryText;
+
+
     void Awake ()
     {
 
@@ -79,6 +85,12 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Pacman_movements.nbVies <= 0) //Si pacman n'a plus de vie : Game Over
+            gameOver();
+        if (numPellet == 0) //Si pacman a mangé tout les points
+            VictoryPanel.SetActive(true);
+
 
         //Chronomètre des modes des fantomes :
             //On diminue timeLeft en fonction du temps actuelle, sa valeur varie entre les Update().
@@ -133,18 +145,14 @@ public class GameManager : MonoBehaviour {
             MouseText.text = "Mode Scatter !";
         else if (state == 3)
             MouseText.text = "Mode Frightened !";
+        
 
-        //ScoreText.text = "Score = " + GameManager.Score + "\n Nombre de pellets restantes :" + numPellet;
-        /*
-        ScoreText.text = "DATA :"+
-               "\n\tREMAINING PELLETS : " + numPellet +
-               "\n\tPELLETS EATEN : " + Score +
-               "\n\tSCORE : " + Score * 10;
-        */
-
+        string vies = "";
+        for (int i = 0; i < Pacman_movements.nbVies; i++)
+            vies += " X ";
         ScoreText.text = "Score : " + Score +
             "\nNombre de Pac-Gommes\nrestantes :" + numPellet +
-            "\nVies Restantes : " + "X X X";
+            "\nVies Restantes : " + vies ;
     }
 
 
@@ -160,7 +168,35 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void gameOver()
+    {
+        gamePaused = true;
+        AudioManager.getInstance().MuteAllSounds();
+        GameOverPanel.SetActive(true);
+        //GameObject.Find("GameOverButton").GetComponent<Buttons_Behaviour>().pause(false);
+        gameOverText.text =
+            "GAME OVER !\n" +
+            "Vous avez perdu toutes vos vies !\n" +
+            "Vous avez obtenu un score de " + Score + ".\n\n" +
+            "\nCliquez ICI pour quitter !";
+        Time.timeScale = 0;
+    }
 
+    public void victory()
+    {
+        gamePaused = true;
+        AudioManager.getInstance().MuteAllSounds();
+        VictoryPanel.SetActive(true);
+        //GameObject.Find("VictoryButton").GetComponent<Buttons_Behaviour>().pause(false);
+        victoryText.text =
+            "Bravo ! \n" +
+            "Vous avez mangee\n" +
+            "tout les Pac-gommes !\n\n" +
+            "Vous avez obtenu un score  total de  " + Score + ".\n\n" +
+            "Cliquez ICI pour quitter !";
+        Time.timeScale = 0;
+
+    }
     public static GameManager getInstance()
     {
         return instance;
