@@ -10,6 +10,7 @@ public class Pacman_movements : Grid_character {
     public Text posText;
     
     SpriteRenderer pacman_SpriteR;
+    AudioSource pacman_waka;
 
     private string newDirection;
 
@@ -34,6 +35,7 @@ public class Pacman_movements : Grid_character {
 
         //Récupère le sprite Renderer Pacman.
         pacman_SpriteR = GetComponent<SpriteRenderer>();
+        pacman_waka = AudioManager.getInstance().Find("Pacman_waka").source;
 
         nbVies = 3;
     }
@@ -57,15 +59,15 @@ public class Pacman_movements : Grid_character {
         if (isOppositeDirection(newDirection))
             changerDirection();
     
-        //Pacman avance vers la case cible si il n'est pas déjà dessus.
+        //Si pacman n'est pas sur sa case cible
         if (transform.position != targetPos)
         {
-            moveToCell(targetPos);
+            moveToCell(targetPos); //Il avance vers elle
             if (!moving) //Si Pacman était à l'arrêt
             {
-                GetComponent<Animator>().enabled = true;
-                GetComponent<AudioSource>().loop = true; //On redémarer son Waka Waka.
-                GetComponent<AudioSource>().Play();
+                GetComponent<Animator>().enabled = true; //On re-anime son sprite
+                pacman_waka.loop = true; //On redémarre son bruit waka_waka.
+                pacman_waka.Play();
                 moving = true;
             }
         }
@@ -84,7 +86,7 @@ public class Pacman_movements : Grid_character {
                 {
                     moving = false;
                     GetComponent<Animator>().enabled = false; //On stop son animation
-                    GetComponent<AudioSource>().loop = false; //Il arrete de crier Waka Waka
+                    pacman_waka.loop = false; //Il arrete de crier Waka Waka
                 }
             }
         }
@@ -123,6 +125,13 @@ public class Pacman_movements : Grid_character {
                 pacman_SpriteR.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
                 break;
         }
+    }
+
+    public void death()
+    {
+        transform.position = new Vector3(1, -9, 0);
+        targetPos = new Vector3(1, -9, 0);
+        AudioManager.getInstance().Find("Pacman_Death").source.Play();
     }
 
     public int getVie()

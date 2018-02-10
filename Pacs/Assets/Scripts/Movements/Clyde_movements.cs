@@ -41,8 +41,12 @@ public class Clyde_movements : Ghost_movements
         //Sprite fantomes
         ghost_SpriteR = gameObject.GetComponent<SpriteRenderer>();
         GhostNormal = ghost_SpriteR.sprite;
-   
 
+        //On initialise le son du fantome:
+        fantome_audio = AudioManager.getInstance().Find("Clyde").source;
+        fantome_sound = fantome_audio.clip; //Le son du fantome est le clip par défaut défini dans l'inspecteur d'Unity.
+        //fantome_afraid est déjà initialisé dans Ghost_movements, la casse mère.
+        fantome_audio.Play();
 
     }
 

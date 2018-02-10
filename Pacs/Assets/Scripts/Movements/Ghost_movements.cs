@@ -53,9 +53,25 @@ public class Ghost_movements : Grid_character {
     protected bool dejaMort; //Permet de savoir si un Fantome viens tout juste de mourir
 
     //Attributs en rapport avec le Sprite du fantome
-    protected SpriteRenderer ghost_SpriteR; //Permet de manipuler le sprite du fantom
+    protected SpriteRenderer ghost_SpriteR; //Permet de manipuler le sprite du fantome
     protected Sprite GhostNormal; //Contient son sprite habituelle
     public Sprite GhostAfraid; //Contient son sprite effrayé.
+
+    //Attributs contenant le son actuel du fantome.
+        /* Notes : l'audio est géré par l'AudioManager, qui contient dans un array tout les composants AudioSource
+         * pour faciliter certaines actions tel que pour couper le son de tout le jeu.
+         * Ainsi, l'AudioSource de chaque object du jeu récupérera son composant depuis l'AudioManager, qui est
+         * un singleton en public.
+         * */
+
+    protected AudioSource fantome_audio;
+    /* Le clip audio de l'AudioSource va changer en fonction de l'état du fantome, ses deux
+     * variables vont stocker le clip pour pouvoir le remettre ensuite */
+
+    //Protégé car propre à chaque fantome
+    protected AudioClip fantome_sound;
+    //Public car le même pour chaque fantome.
+    public AudioClip frightened_sound; 
 
 
 
@@ -274,12 +290,22 @@ public class Ghost_movements : Grid_character {
     {
         ghost_SpriteR.sprite = GhostAfraid;
         speed -= REDUCTION_VITESSE;
+
+        //On change son clip sonore
+        fantome_audio.Stop(); //On arrete son bruit actuel
+        fantome_audio.clip = frightened_sound; //On le replace par le bruit effrayé
+        fantome_audio.Play(); //On joue le nouveau son
     }
     //Remet le fantome a sa vitesse initial et re-affiche son sprite normal.
     public void nestPlusEffraye()
     {
         ghost_SpriteR.sprite = GhostNormal; 
         speed = SPEED_INITIAL;
+
+        //On change son clip sonore
+        fantome_audio.Stop(); //On arrete son bruit actuel
+        fantome_audio.clip = fantome_sound; //On le replace par le bruit effrayé
+        fantome_audio.Play(); //On joue le nouveau son
     }    
     
     //Le Fantome meurt : On le mets à l'état 0 = mort, et on le renvoie dans l'enclos du spawn.
@@ -289,6 +315,11 @@ public class Ghost_movements : Grid_character {
         state = 0;
         transform.position = Vector3.zero;
         targetPos = transform.position;
+
+        //On coupe son son
+        fantome_audio.Stop();
+        //On joue le bruit de Pacman qui mange un fantome.
+        AudioManager.getInstance().Find("Ghost_Eaten").source.Play();
     }
 
 

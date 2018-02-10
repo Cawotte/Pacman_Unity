@@ -9,23 +9,34 @@ public class Buttons_Behaviour : MonoBehaviour {
     Sprite ImageOn;
     public Sprite ImageOff;
 
-    Button bt;
-    bool onOff;
+    GameManager game_manager;
+
+    //Button bt;
+    [HideInInspector]
+    public bool On;
 	void Start () {
+
         ImageOn = GetComponent<Image>().sprite; //Le sprite On est le sprite initial
-        bt = GetComponent<Button>(); //On récupère le composant bouton
-        onOff = true; //Le bouton est on.
+
+        On = true; //Le bouton est on.
+
+        game_manager = GameManager.getInstance();
     }
 	
     //Change l'état du bouton ( On / Off ) ainsi que son sprite.
     public void OnOff()
     {
-        if ( onOff ) {
-            onOff = false;
+
+        //Si le jeu est en pause, on ne fait rien
+        //if (game_manager.gamePaused)
+        //    return;
+
+        if ( On ) {
+            On = false;
             GetComponent<Image>().sprite = ImageOff;
         }
         else {
-            onOff = true;
+            On = true;
             GetComponent<Image>().sprite = ImageOn;
         }
     }
@@ -33,22 +44,44 @@ public class Buttons_Behaviour : MonoBehaviour {
     //Eteint le son
     public void sfx_OnOff()
     {
-        AudioSource sfx = GameObject.Find("Pacman").GetComponent<AudioSource>();
-        if (onOff) {
-            sfx.enabled = true;
-            sfx.Play();
-        }
-        else {
-            sfx.enabled = false;
-        }
+        //Si le jeu est en pause, on ne fait rien
+        if (game_manager.gamePaused)
+            return;
+
+        if (!On)
+            AudioManager.getInstance().MuteAllSounds();
+        else
+            AudioManager.getInstance().UnMuteAllSounds();
     }
 
     public void pause_onOff()
     {
-        if (onOff)
+        AudioManager audio = AudioManager.getInstance();
+        if (On)
+        {
+            game_manager.gamePaused = false;
+            audio.UnMuteAllSounds();
             Time.timeScale = 1;
+        }
         else
+        {
+            game_manager.gamePaused = true;
+            audio.MuteAllSounds();
             Time.timeScale = 0;
+        }
+    }
+
+    public void music_onOff()
+    {
+        AudioManager audio = AudioManager.getInstance();
+        if (!On)
+        {
+            audio.music.source.Stop();
+        }
+        else
+        {
+            audio.music.source.Play();
+        }
     }
 
 

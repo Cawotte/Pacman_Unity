@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour {
      * 
      * **/
 
+    //Singleton pattern
+    public static GameManager instance;
+
+
     public static int Score; //Contient le score.
     public static int numPellet; //Mémorise le nombre de pac-gommes restantes
 
@@ -38,10 +42,23 @@ public class GameManager : MonoBehaviour {
     //On va lister le script de chaque fantomes dans cette liste pour pouvoir ensuite appeller les méthodes permettant d'interagir avec eux.
     Component[] GhostScripts;
 
+    [HideInInspector]
+    public bool gamePaused = false;
 
 
-    void Start ()
+    void Awake ()
     {
+
+        //Singleton
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+
         //Init des scores et nombre de points à récolter.
         numPellet = GameObject.Find("PapaPellets").transform.childCount;
         Score = 0;
@@ -53,6 +70,8 @@ public class GameManager : MonoBehaviour {
 
         //On récupère le script des fantome
         GhostScripts = GameObject.Find("Fantomes").GetComponentsInChildren<Ghost_movements>();
+
+        //gamePaused = false;
 
 
     }
@@ -140,7 +159,13 @@ public class GameManager : MonoBehaviour {
             fantome.deviensEffraye();
         }
     }
-    
+
+
+    public static GameManager getInstance()
+    {
+        return instance;
+    }
+
 }
 
 

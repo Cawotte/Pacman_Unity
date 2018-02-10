@@ -55,8 +55,13 @@ public class Inky_movements : Ghost_movements
 
         //On recupere la référence du script de Pacman, pour récupérer sa direction.
         BlinkyTrans = (GameObject.Find("Blinky")).GetComponent<Transform>();
-
         PacmanScript = (GameObject.Find("Pacman")).GetComponent<Grid_character>();
+
+        //On initialise le son du fantome:
+        fantome_audio = AudioManager.getInstance().Find("Inky").source;
+        fantome_sound = fantome_audio.clip; //Le son du fantome est le clip par défaut défini dans l'inspecteur d'Unity.
+        //fantome_afraid est déjà initialisé dans Ghost_movements, la casse mère.
+        fantome_audio.Play();
 
 
     }

@@ -47,8 +47,7 @@ public class Pacman_collisions : MonoBehaviour {
 
             if (stateGhost != 3) //Si le fantome n'est pas effrayé, Pacman meurt.
             {
-                pacman.GetComponent<Transform>().position = new Vector3(1, -9, 0);
-                pacman.GetComponent<Pacman_movements>().setTargetPos( new Vector3(1, -9, 0) );
+                pacman.GetComponent<Pacman_movements>().death();
                 GameManager.Score -= 250;
                 //PlaceHolder de la mort, Pacman est juste TP à sa position de départ.
             }
