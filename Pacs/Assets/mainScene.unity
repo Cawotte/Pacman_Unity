@@ -2366,25 +2366,25 @@ MonoBehaviour:
   - name: Clyde
     clip: {fileID: 8300000, guid: bb71460f47d13f34a87a94c44c86a869, type: 3}
     volume: 0.315
-    pitch: 1.15
+    pitch: 0.8
     loop: 1
     source: {fileID: 0}
   - name: Blinky
     clip: {fileID: 8300000, guid: bb71460f47d13f34a87a94c44c86a869, type: 3}
     volume: 0.315
-    pitch: 1.15
+    pitch: 0.8
     loop: 1
     source: {fileID: 0}
   - name: Pinky
-    clip: {fileID: 8300000, guid: bb71460f47d13f34a87a94c44c86a869, type: 3}
-    volume: 0
-    pitch: 1.15
+    clip: {fileID: 8300000, guid: e8f6fca3e5843ad49b2e8016ef2731e4, type: 3}
+    volume: 0.315
+    pitch: 0.8
     loop: 1
     source: {fileID: 0}
   - name: Inky
-    clip: {fileID: 8300000, guid: bb71460f47d13f34a87a94c44c86a869, type: 3}
-    volume: 0
-    pitch: 1.15
+    clip: {fileID: 8300000, guid: e8f6fca3e5843ad49b2e8016ef2731e4, type: 3}
+    volume: 0.315
+    pitch: 0.8
     loop: 1
     source: {fileID: 0}
   - name: Ghost_Eaten
@@ -3709,7 +3709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9852941, g: 0.5536034, b: 0.0072448165, a: 1}
+  m_Color: {r: 1, g: 0.9732251, b: 0.029411793, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4961,6 +4961,7 @@ MonoBehaviour:
   speed: 8
   MouseText: {fileID: 1414804190}
   posText: {fileID: 621450226}
+  isInvincible: 0
 --- !u!1001 &623680434
 Prefab:
   m_ObjectHideFlags: 0

@@ -57,6 +57,10 @@ public class Clyde_movements : Ghost_movements
         updateCell();
         updatePacPos();
 
+        //Si le fantome est détecté hors de la map ( conséquence d'un bug ) on le renvoie au spawn.
+        if (estHorsDeLaMap())
+            retourAuSpawn();
+
         //On modifie le volume du bruit du fantome en fct de sa distance avec Pacman, plus il est près, plus il est fort !
         volumeEnFonctionDeDistance();
 

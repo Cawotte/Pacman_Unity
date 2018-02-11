@@ -42,6 +42,9 @@ public class Pacman_collisions : MonoBehaviour {
 
         if ( coll.gameObject.tag == "Ghost")
         {
+            //Si Pacman est dans "Invincible" (il viens de respawn et a des frames d'invincibilités), on ne fait rien.
+            if (pacman.GetComponent<Pacman_movements>().isInvincible)
+                return;
 
             int stateGhost = coll.gameObject.GetComponent<Ghost_movements>().getState();
 

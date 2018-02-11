@@ -53,7 +53,7 @@ public class Pinky_movements : Ghost_movements {
         fantome_audio = AudioManager.getInstance().Find("Pinky").source;
         fantome_sound = fantome_audio.clip; //Le son du fantome est le clip par défaut défini dans l'inspecteur d'Unity.
         //fantome_afraid est déjà initialisé dans Ghost_movements, la casse mère.
-        fantome_audio.PlayDelayed(0.3f);
+        fantome_audio.PlayDelayed(1f);
 
 
     }
@@ -67,6 +67,11 @@ public class Pinky_movements : Ghost_movements {
         updatePacPos();
         directionPac = PacmanScript.getDirection();
 
+        //Si le fantome est détecté hors de la map ( conséquence d'un bug ) on le renvoie au spawn.
+        if (estHorsDeLaMap())
+            retourAuSpawn();
+
+        
 
         //On modifie le volume du bruit du fantome en fct de sa distance avec Pacman, plus il est près, plus il est fort !
         volumeEnFonctionDeDistance();

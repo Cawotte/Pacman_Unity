@@ -19,7 +19,6 @@ abstract public class Grid_character : MonoBehaviour {
     //UI
     public Text MouseText;
 
-  
 
     //Renvoie les positions centrales (world) des cases adjacentes 
     public Vector3 rightCell() {
@@ -53,22 +52,6 @@ abstract public class Grid_character : MonoBehaviour {
                 return Vector3Int.zero;
         }
     }
-    public bool isOppositeDirection(string dir)
-    {
-        switch (dir)
-        {
-            case "Right":
-                return direction == "Left";
-            case "Left":
-                return direction == "Right";
-            case "Down":
-                return direction == "Up";
-            case "Up":
-                return direction == "Down";
-            default:
-                return false;
-        }
-    }
 
     public string oppositeDirection(string dir)
     {
@@ -88,18 +71,7 @@ abstract public class Grid_character : MonoBehaviour {
         }
     }
     
-    //Retourne vrai si la case en argument n'est pas une des deux cases de la porte du spawn des fantomes.
-    public bool nestPasEntreeSpawn(Vector3 pos)
-    {
-        return pos != new Vector3(0, 2, 0) && pos != new Vector3(1, 2, 0);
-    }
 
-    //Retourne Vrai si la case donné est un mur
-    public bool isWall(Vector3Int posCell) {
-        return tilemap.HasTile(posCell); }
-    //Retourne vrai si la position donné fait partir d'une case qui est un mur.
-    public bool isWall(Vector3 posWorld){
-        return tilemap.HasTile(tilemap.WorldToCell(posWorld)); }
 
     //Déplace gameObject vers la case Cell donné (Vector3Int issue de "tilemap.WorldToCell(transform.position)" ) 
     public void moveToCell(Vector3Int posCell)
@@ -136,6 +108,52 @@ abstract public class Grid_character : MonoBehaviour {
         Cell = tilemap.WorldToCell(transform.position);
     }
 
+    //Booléens
+
+    //Retourne vrai si la case en argument n'est pas une des deux cases de la porte du spawn des fantomes.
+    public bool nestPasEntreeSpawn(Vector3 pos)
+    {
+        return pos != new Vector3(0, 2, 0) && pos != new Vector3(1, 2, 0);
+    }
+
+    //Retourne Vrai si la case donné est un mur
+    public bool isWall(Vector3Int posCell)
+    {
+        return tilemap.HasTile(posCell);
+    }
+    //Retourne vrai si la position donné fait partir d'une case qui est un mur.
+    public bool isWall(Vector3 posWorld)
+    {
+        return tilemap.HasTile(tilemap.WorldToCell(posWorld));
+    }
+
+    public bool isOppositeDirection(string dir)
+    {
+        switch (dir)
+        {
+            case "Right":
+                return direction == "Left";
+            case "Left":
+                return direction == "Right";
+            case "Down":
+                return direction == "Up";
+            case "Up":
+                return direction == "Down";
+            default:
+                return false;
+        }
+    }
+
+    //Permet de savoir si le personnage est encore dans le labyrinthe, utilisé en cas de bug si pacman ou un fantome passe à travers le mur du niveau.
+    public bool estHorsDeLaMap()
+    {
+        if ( Cell.x < -13 || Cell.x > 14 || Cell.y < -16 || Cell.y > 14)
+        {
+            Debug.Log(gameObject.name + " est sorti de la carte !", gameObject);
+            return true;
+        }
+        return false;
+    }
 
     //Accesseurs
 

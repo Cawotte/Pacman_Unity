@@ -178,6 +178,15 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    //Lorsque Pacman meurt, change le mode des fantomes pour Scatter.
+    public void PacmanDeath()
+    {
+        state = 2;
+        timeLeft = DUREE_SCATTER;
+        foreach (Ghost_movements fantome in GhostScripts)
+            fantome.setState(state);
+    }
+
     //Affiche l'écran de GameOver
     public void gameOver()
     {

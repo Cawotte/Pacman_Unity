@@ -192,7 +192,7 @@ public class Ghost_movements : Grid_character {
         //On choisit aléatoirement une case parmi celles possibles :
         if (listC.Count == 1)
             return listC[0];
-        return listC[UnityEngine.Random.Range(0, listC.Count - 1)];
+        return listC[UnityEngine.Random.Range(0, listC.Count)];
     }
 
     //
@@ -203,7 +203,7 @@ public class Ghost_movements : Grid_character {
             fantome_audio.volume = 0;
         else
         {
-            fantome_audio.volume = 1 - 0.3f*(distAvecPacman / 20f);
+            fantome_audio.volume = 1 - (distAvecPacman / 20f);
         }
     }
 
@@ -344,6 +344,14 @@ public class Ghost_movements : Grid_character {
             direction = "Up";
         else if (cellCentre.y > targetPos.y)
             direction = "Down";
+    }
+
+    //Renvoie le fantome au spawn. Utilisé uniquement si il est détecté hors de la Map, pour le faire revenir dedans.
+    public void retourAuSpawn()
+    {
+        transform.position = Vector3.zero;
+        targetPos = Vector3.zero;
+        Debug.Log(gameObject.name + " a été renvoyé au spawn !");
     }
 
     // -------------Booléens  -----------------

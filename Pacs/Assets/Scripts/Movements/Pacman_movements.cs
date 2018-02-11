@@ -18,6 +18,9 @@ public class Pacman_movements : Grid_character {
     private float moveVertical;
     private bool moving;
 
+    //Pour les frames d'invincibilités de Pacman après avoir respawn.
+    public bool isInvincible;
+
     [HideInInspector]
     public static int nbVies; //Nombre de vie de Pacman
 
@@ -34,6 +37,8 @@ public class Pacman_movements : Grid_character {
         direction = "Right";
         newDirection = direction;
 
+        isInvincible = false;
+
         //Récupère le sprite Renderer Pacman.
         pacman_SpriteR = GetComponent<SpriteRenderer>();
         pacman_waka = AudioManager.getInstance().Find("Pacman_waka").source;
@@ -46,6 +51,17 @@ public class Pacman_movements : Grid_character {
     {
 
         updateCell();
+
+        //Si pacman est hors de la map ( a cause d'un bug )
+        if ( estHorsDeLaMap() )
+        {
+            //On le renvoie à l'intérieur, sur sa position de départ
+            transform.position = new Vector3(1, -9, 0);
+            targetPos = transform.position;
+
+            //On lui donne qlq frames d'invincibilités au cas où il atterit sur un fantome :
+            StartCoroutine("FrameInvincibilte");
+        }
 
         //On enregistre la dernière direction donnée en input:
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -131,14 +147,11 @@ public class Pacman_movements : Grid_character {
     public void death()
     {
         //Les fantomes passent tous en mode Scatter pour 3s.
-        GameManager.getInstance().state = 2;
-        GameManager.getInstance().timeLeft = 3f;
+        GameManager.getInstance().PacmanDeath();
         nbVies--;
-        AudioManager.getInstance().Find("Pacman_Death").source.Play();
+        AudioManager.getInstance().Find("Pacman_Death").source.Play(); //On joue son bruit de mort.
         if (nbVies > 0) //Si ce n'était pas la dernière vie de Pacman, lance sa corountine de respawn
             StartCoroutine("RespawnTime");
-        //On renvoie pacman à sa position de départ
-        //On joue son bruit de mort.
     }
 
     /* Co-routine, c'est une fonction qui peut s'étendre sur plusieurs exécutions de la fonction Update.
@@ -151,37 +164,42 @@ public class Pacman_movements : Grid_character {
     IEnumerator RespawnTime()
     {
         float timeLeft = 3f;
+        //On désactive le sprite et le collider de Pacman pour qu'il soit invisible et non interagissable avec par les fantomes.
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         while ( timeLeft >= 0f )
         {
             timeLeft -= Time.deltaTime;
             //Debug.Log("Temps restant spawntime: " + timeLeft);
-            yield return null;
+            yield return null; //Là où la co-routine reprend à chaque Update();
         }
         //On renvoie pacman à sa position initial
         transform.position = new Vector3(1, -9, 0);
-        targetPos = new Vector3(1, -9, 0);
+        targetPos = transform.position;
+
+
+        //On refait apparaitre Pacman
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
 
         //Une autre co-routine qui rend invincible Pacman pendant 1.5s pour éviter qu'il se fasse manger d'office par un éventuel fantome.
         StartCoroutine("FrameInvincibilite");
 
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     //Rend Pacman invincible (en désactivant son collider) pendant 1.5s. Utilisé lors de son respawn pour éviter qu'il meurt trop vite
     IEnumerator FrameInvincibilite()
     {
         float timeLeft = 1.5f;
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        isInvincible = true;
         //Debug.Log("Pacman est invincible !");
         while (timeLeft >= 0f)
         {
             timeLeft -= Time.deltaTime;
             yield return null;
         }
+        isInvincible = false;
         //Debug.Log("Pacman n'est plus invincible !");
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     public void setVie(int vie)

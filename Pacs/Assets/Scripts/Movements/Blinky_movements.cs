@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -32,6 +31,7 @@ public class Blinky_movements : Ghost_movements {
         direction = "Left";
         targetPos = caseDevant();
 
+
         //Etat Fantome
         state = 1; //Il commence en Chase
         dejaMort = false;
@@ -45,16 +45,33 @@ public class Blinky_movements : Ghost_movements {
         fantome_audio = AudioManager.getInstance().Find("Blinky").source;
         fantome_sound = fantome_audio.clip; //Le son du fantome est le clip par défaut défini dans l'inspecteur d'Unity.
         //fantome_afraid est déjà initialisé dans Ghost_movements, la casse mère.
-        fantome_audio.PlayDelayed(0.1f);
+        fantome_audio.PlayDelayed(0.6f);
 
     }
 
     // Update is called once per frame
     void Update () {
 
+
+        /* Debug, sert à faire apparaitre des lignes qui encadre la map pour vérifier les coordonnées des angles.
+        Vector3 BottomRight = new Vector3(14, -16, 0);
+        Vector3 BottomLeft = new Vector3(-13, -16, 0);
+        Vector3 TopLeft = new Vector3(-13, 14, 0);
+        Vector3 TopRight = new Vector3(14, 14, 0);
+
+        Debug.DrawLine(TopLeft, TopRight, Color.green);
+        Debug.DrawLine(TopRight, BottomRight, Color.green);
+        Debug.DrawLine(BottomRight, BottomLeft, Color.green);
+        Debug.DrawLine(BottomLeft, TopLeft, Color.green);
+        */
+
         //Mets à jour sa propre position dans Cell et celle du Pacman pour le allerVers.
         updateCell();
         updatePacPos();
+
+        //Si le fantome est détecté hors de la map ( conséquence d'un bug ) on le renvoie au spawn.
+        if (estHorsDeLaMap())
+            retourAuSpawn();
 
         //On modifie le volume du bruit du fantome en fct de sa distance avec Pacman, plus il est près, plus il est fort !
         volumeEnFonctionDeDistance();

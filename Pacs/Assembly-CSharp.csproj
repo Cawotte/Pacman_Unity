@@ -53,19 +53,17 @@
   <ItemGroup>
      <Compile Include="Assets\nextMusic.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Buttons_Behaviour.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Grid_character.cs" />
      <Compile Include="Assets\Scripts\Movements\Blinky_movements.cs" />
      <Compile Include="Assets\Scripts\Movements\Clyde_movements.cs" />
      <Compile Include="Assets\Scripts\Movements\Ghost_movements.cs" />
+     <Compile Include="Assets\Scripts\Movements\Grid_character.cs" />
      <Compile Include="Assets\Scripts\Movements\Inky_movements.cs" />
      <Compile Include="Assets\Scripts\Movements\Pacman_movements.cs" />
      <Compile Include="Assets\Scripts\Movements\Pinky_movements.cs" />
-     <Compile Include="Assets\Scripts\MovePacman.cs" />
      <Compile Include="Assets\Scripts\Pacman_collisions.cs" />
      <Compile Include="Assets\Scripts\Sound.cs" />
-     <Compile Include="Assets\Scripts\TileMapTest.cs" />
-     <Compile Include="Assets\Scripts\UI\Buttons_Behaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
