@@ -17,7 +17,6 @@ public class Clyde_movements : Ghost_movements
      * 
      * */
 
-    // Use this for initialization
     void Start()
     {
 
@@ -45,7 +44,7 @@ public class Clyde_movements : Ghost_movements
         //On initialise le son du fantome:
         fantome_audio = AudioManager.getInstance().Find("Clyde").source;
         fantome_sound = fantome_audio.clip; //Le son du fantome est le clip par défaut défini dans l'inspecteur d'Unity.
-        //fantome_afraid est déjà initialisé dans Ghost_movements, la casse mère.
+        //fantome_afraid est déjà initialisé dans Ghost_movements, la classe mère.
         fantome_audio.Play();
 
     }
@@ -57,6 +56,9 @@ public class Clyde_movements : Ghost_movements
         //Mets à jour sa propre position dans Cell et celle du Pacman pour les calculs.
         updateCell();
         updatePacPos();
+
+        //On modifie le volume du bruit du fantome en fct de sa distance avec Pacman, plus il est près, plus il est fort !
+        volumeEnFonctionDeDistance();
 
         //Comportement différente en fonction de l'état du fantome
         // 1 : Chase, 2 : Scatter, 3 : Frightened.
@@ -90,7 +92,7 @@ public class Clyde_movements : Ghost_movements
 
     }
     
-
+    //Distance entre Clyde et Pacman, pour déterminer son comportement.
     public float distanceEntreClydeEtPacman()
     {
         return dist(transform.position, PacmanPos);

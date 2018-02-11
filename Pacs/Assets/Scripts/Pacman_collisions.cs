@@ -12,12 +12,12 @@ public class Pacman_collisions : MonoBehaviour {
      * Si c'est un fantome, soit Pacman meurt et perds des points, soit le fantome est effrayé et pacman le mange et gagne des points.
      **/
     GameObject pacman;
-    GameObject gameManager;
+    GameManager gameManager;
 
     void Start()
     {
         pacman = GameObject.Find("Pacman");
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameManager.getInstance();
     }
 
     void OnTriggerEnter2D (Collider2D coll) {
@@ -36,7 +36,7 @@ public class Pacman_collisions : MonoBehaviour {
             Destroy(coll.gameObject); //On détruit le point.
 
             //On règle l'état à 3 pour Frightened dans le GameManager, a pour conséquence d'effrayer tout les fantomes.
-            gameManager.GetComponent<GameManager>().Frighten();
+            gameManager.Frighten();
 
         }
 

@@ -45,7 +45,7 @@ public class Blinky_movements : Ghost_movements {
         fantome_audio = AudioManager.getInstance().Find("Blinky").source;
         fantome_sound = fantome_audio.clip; //Le son du fantome est le clip par défaut défini dans l'inspecteur d'Unity.
         //fantome_afraid est déjà initialisé dans Ghost_movements, la casse mère.
-        fantome_audio.Play();
+        fantome_audio.PlayDelayed(0.1f);
 
     }
 
@@ -55,6 +55,9 @@ public class Blinky_movements : Ghost_movements {
         //Mets à jour sa propre position dans Cell et celle du Pacman pour le allerVers.
         updateCell();
         updatePacPos();
+
+        //On modifie le volume du bruit du fantome en fct de sa distance avec Pacman, plus il est près, plus il est fort !
+        volumeEnFonctionDeDistance();
 
         switch (state)
         {

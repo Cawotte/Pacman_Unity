@@ -130,12 +130,60 @@ public class Pacman_movements : Grid_character {
 
     public void death()
     {
+        //Les fantomes passent tous en mode Scatter pour 3s.
+        GameManager.getInstance().state = 2;
+        GameManager.getInstance().timeLeft = 3f;
         nbVies--;
+        AudioManager.getInstance().Find("Pacman_Death").source.Play();
+        if (nbVies > 0) //Si ce n'était pas la dernière vie de Pacman, lance sa corountine de respawn
+            StartCoroutine("RespawnTime");
+        //On renvoie pacman à sa position de départ
+        //On joue son bruit de mort.
+    }
+
+    /* Co-routine, c'est une fonction qui peut s'étendre sur plusieurs exécutions de la fonction Update.
+     * "yield return null" est la ligne où la fonction va reprendre son cours à chaque nouvelle exécution d'Update.
+     * 
+     * Cette co-routine sert à faire disparaitre physiquement et visuellement Pacman pendant 3s lorsqu'il meurt,
+     * avant de le faire réapparaitre à son point de spawn.
+     * 
+     * */
+    IEnumerator RespawnTime()
+    {
+        float timeLeft = 3f;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        while ( timeLeft >= 0f )
+        {
+            timeLeft -= Time.deltaTime;
+            //Debug.Log("Temps restant spawntime: " + timeLeft);
+            yield return null;
+        }
+        //On renvoie pacman à sa position initial
         transform.position = new Vector3(1, -9, 0);
         targetPos = new Vector3(1, -9, 0);
-        AudioManager.getInstance().Find("Pacman_Death").source.Play();
+
+        //Une autre co-routine qui rend invincible Pacman pendant 1.5s pour éviter qu'il se fasse manger d'office par un éventuel fantome.
+        StartCoroutine("FrameInvincibilite");
+
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
-    
+
+    //Rend Pacman invincible (en désactivant son collider) pendant 1.5s. Utilisé lors de son respawn pour éviter qu'il meurt trop vite
+    IEnumerator FrameInvincibilite()
+    {
+        float timeLeft = 1.5f;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        //Debug.Log("Pacman est invincible !");
+        while (timeLeft >= 0f)
+        {
+            timeLeft -= Time.deltaTime;
+            yield return null;
+        }
+        //Debug.Log("Pacman n'est plus invincible !");
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+    }
+
     public void setVie(int vie)
     {
         nbVies = vie;

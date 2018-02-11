@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
 
     //Etat dans lequel doit être tout les fantomes. Il est en static pour que le script "Pacman_collisions" puisse facilement y accéder pour modifier l'état
     //lorsquu'n super point est mangé.
+    [HideInInspector]
     public int state;
     public bool frightened;
 
@@ -37,7 +38,9 @@ public class GameManager : MonoBehaviour {
     public const float DUREE_SCATTER = 7.0f;
     public const float DUREE_AFRAID = 7.0f;
     public const float DUREE_MORT = 3.0f;
-    float timeLeft; //Notre timer.
+
+    [HideInInspector]
+    public float timeLeft; //Notre timer.
 
     //On va lister le script de chaque fantomes dans cette liste pour pouvoir ensuite appeller les méthodes permettant d'interagir avec eux.
     Component[] GhostScripts;
@@ -89,7 +92,7 @@ public class GameManager : MonoBehaviour {
         if (Pacman_movements.nbVies <= 0) //Si pacman n'a plus de vie : Game Over
             gameOver();
         if (numPellet == 0) //Si pacman a mangé tout les points
-            VictoryPanel.SetActive(true);
+            victory();
 
 
         //Chronomètre des modes des fantomes :
@@ -97,6 +100,12 @@ public class GameManager : MonoBehaviour {
             //si TimeLeft est égale à 20.0, alors Timeleft sera égale à 0 ou moins au bout de 20s.
         timeLeft -= Time.deltaTime; 
 
+        /* l'etat des fantomes :
+         * 0 = Mort
+         * 1 = Chase
+         * 2 = Scatter
+         * 3 = Frightened
+         * */
 
         //Lorsque le timer se termine, on change le mode des fantomes.
         if (timeLeft <= 0.0f)
@@ -104,9 +113,10 @@ public class GameManager : MonoBehaviour {
             
             foreach (Ghost_movements fantome in GhostScripts)
             {
+                //Si on passe de Scatter à Chase ou vice-versa, les fantomes font demi-tour.
                 if (state == 1 || state == 2)
                     fantome.faireDemiTour();
-                if (state == 3)
+                if (state == 3) //Si les fantomes étaient effrayés, on les remets dans leur état normal.
                     fantome.nestPlusEffraye();
             }
 
@@ -168,6 +178,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    //Affiche l'écran de GameOver
     public void gameOver()
     {
         gamePaused = true;
@@ -176,12 +187,13 @@ public class GameManager : MonoBehaviour {
         //GameObject.Find("GameOverButton").GetComponent<Buttons_Behaviour>().pause(false);
         gameOverText.text =
             "GAME OVER !\n" +
-            "Vous avez perdu toutes vos vies !\n" +
-            "Vous avez obtenu un score de " + Score + ".\n\n" +
+            "Vous avez perdu \ntoutes vos vies !\n" +
+            "Vous avez  obtenu  un score de " + Score + ".\n" +
             "\nCliquez ICI pour quitter !";
         Time.timeScale = 0;
     }
 
+    //Affiche l'écran de victoire
     public void victory()
     {
         gamePaused = true;

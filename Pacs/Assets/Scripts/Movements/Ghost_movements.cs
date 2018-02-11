@@ -29,14 +29,10 @@ public class Ghost_movements : Grid_character {
     protected Vector3Int PacmanPosCell;
     protected Transform PacTransform;
 
-    //Constantes 
-    //public const float DUREE_CHASE = 20.0f;
-    //public const float DUREE_SCATTER = 7.0f;
-    //public const float DUREE_AFRAID = 7.0f;
+    //Constantes
     public const float DUREE_MORT = 3.0f;
     public const float REDUCTION_VITESSE = 4.0f;
-
-    public const float SPEED_INITIAL = 6.0f;
+    public const float VITESSE_INITIAL = 6.0f;
 
     //La case autour de laquelle le fantome va tourner en mode Scatter, elle dépend du fantome.
     public Vector3Int ScatterPos;
@@ -199,29 +195,17 @@ public class Ghost_movements : Grid_character {
         return listC[UnityEngine.Random.Range(0, listC.Count - 1)];
     }
 
-
-    public void sortirSpawn()
+    //
+    public void volumeEnFonctionDeDistance()
     {
-        //Il y a deux cases vers lesquels se diriger pour sortir du spawn, le fantome se dirige vers
-        //la plus proche d'entre elle
-        //Vector3 cellCible;
-
-        if (transform.position != targetPos)
-            moveToCell(targetPos);
+        float distAvecPacman = dist(Cell, PacmanPos);
+        if (distAvecPacman >= 20f)
+            fantome_audio.volume = 0;
         else
         {
-            if (Cell.x == -1 || Cell.x == 0)
-                targetPos = topCell();
-            else if (Cell.x < 0)
-                targetPos = rightCell();
-            else
-                targetPos = leftCell();
-            
-            updateDirection(targetPos);
+            fantome_audio.volume = 1 - 0.3f*(distAvecPacman / 20f);
         }
-
     }
-
 
 
 
@@ -271,6 +255,31 @@ public class Ghost_movements : Grid_character {
         }
     }
 
+    //Fais diriger le fantome vers la sortie de son spawn. Utile car la fonction de base caseAdjLaPlusProche() a du mal a
+    //fonctionner correctement lorsque le fantome n'est pas dans un couloir.
+    public void sortirSpawn()
+    {
+        //Il y a deux cases vers lesquels se diriger pour sortir du spawn, le fantome se dirige vers
+        //la plus proche d'entre elle
+        //Vector3 cellCible;
+
+        if (transform.position != targetPos)
+            moveToCell(targetPos);
+        else
+        {
+            if (Cell.x == -1 || Cell.x == 0)
+                targetPos = topCell();
+            else if (Cell.x < 0)
+                targetPos = rightCell();
+            else
+                targetPos = leftCell();
+
+            updateDirection(targetPos);
+        }
+
+    }
+
+
     // ---------- Methode de changement d'état ---------
 
     //Réduit la vitesse du fantome et affiche son sprite Frightened. 
@@ -289,7 +298,7 @@ public class Ghost_movements : Grid_character {
     public void nestPlusEffraye()
     {
         ghost_SpriteR.sprite = GhostNormal; 
-        speed = SPEED_INITIAL;
+        speed = VITESSE_INITIAL;
 
         //On change son clip sonore
         fantome_audio.Stop(); //On arrete son bruit actuel
